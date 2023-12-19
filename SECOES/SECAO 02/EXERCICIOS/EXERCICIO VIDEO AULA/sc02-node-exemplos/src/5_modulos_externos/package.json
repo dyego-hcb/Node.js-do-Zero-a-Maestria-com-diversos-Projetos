@@ -1,0 +1,14 @@
+{
+  "name": "5_modulos_externos",
+  "version": "1.0.0",
+  "description": "Estudos sobre npm",
+  "main": "sc02-node-exemplo05.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dyego (zebodexx)",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
+}
