@@ -29,18 +29,18 @@ Nesta primeira seção, "Introdução", começamos a explorar os fundamentos do 
 ### Estrutura do Repositório
 
 - **Resumo da Seção:**
-   - Localizado na pasta [Resumo](./Resumo), fornece uma visão detalhada dos tópicos abordados.
+   - Localizado na pasta [Resumo](./RESUMO/), fornece uma visão detalhada dos tópicos abordados.
 
 - **Exemplos Práticos:**
-   - Encontrados na pasta [Exercicio Video Aula](./EXERCICIOS/EXERCICIO VIDEO AULA).
+   - Encontrados na pasta [Exercicio Video Aula](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/).
 
 - **Exercícios Propostos e Soluções:**
-   - Disponíveis na pasta [Exercicio Proposto](./EXERCICIOS/EXERCICIO PROPOSTO).
+   - Disponíveis na pasta [Exercicio Proposto](./EXERCICIOS/EXERCICIO%20PROPOSTO/).
 
 - **Tarefa 01:**
    - Criação de um novo projeto Node.js.
    - Desenvolvimento de duas variáveis e exibição da soma.
-   - A solução está na pasta [Tarefa 01](./EXERCICIOS/EXERCICIO PROPOSTO/TAREFA 01).
+   - A solução está na pasta [Tarefa 01](./EXERCICIOS/EXERCICIO%20PROPOSTO/TAREFA%2001/).
 
 - **Repositório do Curso:**
    - Todo o código está no [repositório público do GitHub](https://github.com/matheusbattisti/curso_node) para referência.
@@ -86,18 +86,18 @@ In this initial section, "Introduction," we begin to explore the fundamentals of
 ### Repository Structure
 
 - **Section Summary:**
-   - Located in the [Summary](./Resumo) folder, providing a detailed overview of the covered topics.
+   - Located in the [Summary](./RESUMO/) folder, providing a detailed overview of the covered topics.
 
 - **Practical Examples:**
-   - Found in the [Exercise Video Lesson](./EXERCICIOS/EXERCICIO VIDEO AULA)folder.
+   - Found in the [Exercise Video Lesson](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/) folder.
 
 - **Proposed Exercises and Solutions:**
-   - Available in the [Proposed Exercise]((./EXERCICIOS/EXERCICIO PROPOSTO) folder.
+   - Available in the [Proposed Exercise](./EXERCICIOS/EXERCICIO%20PROPOSTO/) folder.
 
 - **Task 01:**
    - Creating a new Node.js project.
    - Developing two variables and displaying their sum.
-   - The solution is in the [Task 01](./EXERCICIOS/EXERCICIO PROPOSTO/TAREFA 01) folder.
+   - The solution is in the [Task 01](./EXERCICIOS/EXERCICIO%20PROPOSTO/TAREFA%2001/) folder.
 
 - **Course Repository:**
    - All code is available in the [public GitHub repository](https://github.com/matheusbattisti/curso_node) for reference.
