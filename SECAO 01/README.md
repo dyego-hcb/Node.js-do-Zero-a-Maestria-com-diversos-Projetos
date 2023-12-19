@@ -29,18 +29,18 @@ Nesta primeira seção, "Introdução", começamos a explorar os fundamentos do 
 ### Estrutura do Repositório
 
 - **Resumo da Seção:**
-   - Localizado na pasta [Resumo]('./Resumo'), fornece uma visão detalhada dos tópicos abordados.
+   - Localizado na pasta [Resumo](./Resumo), fornece uma visão detalhada dos tópicos abordados.
 
 - **Exemplos Práticos:**
-   - Encontrados na pasta [Exercicio Video Aula]('./EXERCICIOS/EXERCICIO VIDEO AULA').
+   - Encontrados na pasta [Exercicio Video Aula](./EXERCICIOS/EXERCICIO VIDEO AULA).
 
 - **Exercícios Propostos e Soluções:**
-   - Disponíveis na pasta [Exercicio Proposto]('./EXERCICIOS/EXERCICIO PROPOSTO').
+   - Disponíveis na pasta [Exercicio Proposto](./EXERCICIOS/EXERCICIO PROPOSTO).
 
 - **Tarefa 01:**
    - Criação de um novo projeto Node.js.
    - Desenvolvimento de duas variáveis e exibição da soma.
-   - A solução está na pasta [Tarefa 01]('./EXERCICIOS/EXERCICIO PROPOSTO/TAREFA 01').
+   - A solução está na pasta [Tarefa 01](./EXERCICIOS/EXERCICIO PROPOSTO/TAREFA 01).
 
 - **Repositório do Curso:**
    - Todo o código está no [repositório público do GitHub](https://github.com/matheusbattisti/curso_node) para referência.
@@ -52,3 +52,60 @@ Nesta primeira seção, "Introdução", começamos a explorar os fundamentos do 
 - Participe ativamente das discussões na comunidade do curso.
 
 Ao final desta seção, você terá não apenas instalado as ferramentas essenciais do Node.js, mas também executado sua primeira aplicação e compreendido os fundamentos dos Core Modules.
+
+***
+
+# Node.js Course from Zero to Mastery
+
+## Section 01: Introduction
+
+In this initial section, "Introduction," we begin to explore the fundamentals of Node.js.
+
+### Covered Topics
+
+1. **What is Node.js?**
+   - Node.js as a JavaScript runtime on the server side.
+   - Built on the Google V8 engine for high performance.
+
+2. **What is npm?**
+   - npm as the Node.js package manager.
+   - Installation of libraries and execution of scripts.
+
+3. **Installation and Configuration:**
+   - Installation guide for Node.js on Windows and Linux.
+   - Configuration of VS Code as the preferred editor.
+
+4. **Running Node:**
+   - Using the terminal to execute Node.js files.
+   - Introduction to the REPL (Read Evaluate Print Loop).
+
+5. **Using Modules:**
+   - The significance of modules in Node.js.
+   - Practical examples with the File System module.
+
+### Repository Structure
+
+- **Section Summary:**
+   - Located in the [Summary](./Resumo) folder, providing a detailed overview of the covered topics.
+
+- **Practical Examples:**
+   - Found in the [Exercise Video Lesson](./EXERCICIOS/EXERCICIO VIDEO AULA)folder.
+
+- **Proposed Exercises and Solutions:**
+   - Available in the [Proposed Exercise]((./EXERCICIOS/EXERCICIO PROPOSTO) folder.
+
+- **Task 01:**
+   - Creating a new Node.js project.
+   - Developing two variables and displaying their sum.
+   - The solution is in the [Task 01](./EXERCICIOS/EXERCICIO PROPOSTO/TAREFA 01) folder.
+
+- **Course Repository:**
+   - All code is available in the [public GitHub repository](https://github.com/matheusbattisti/curso_node) for reference.
+
+### Getting the Most Out of It
+
+- Complete practical exercises to solidify your understanding.
+- Follow along with the coding exercises for hands-on experience.
+- Actively participate in community discussions during the course.
+
+By the end of this section, you will not only have installed essential Node.js tools but also executed your first application and grasped the fundamentals of Core Modules.

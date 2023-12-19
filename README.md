@@ -37,3 +37,46 @@ O curso está dividido em 29 seções, totalizando 481 aulas com uma duração d
 - Manipulação de bancos de dados relacionais e não relacionais.
 - Padrão de arquitetura MVC.
 - Desenvolvimento de APIs RESTful.
+
+***
+
+# Node.js from Scratch to Mastery with Various Projects
+
+This repository is dedicated to the "Node.js from Scratch to Mastery with Various Projects" Udemy course. Embark on a comprehensive learning journey, covering the basics to advanced project development with Node.js.
+
+## Folder Structure
+
+- The **[Sections](./SECOES/)** folder contains all completed sections of the course. Inside this folder, you'll find each section organized into its corresponding folder. Each folder contains a detailed summary of the respective section, exercises performed during the video lecture, and proposed exercises.
+
+## Master the Following Topics
+
+Discover and enhance your skills in the following areas throughout the course:
+
+- **Node.js Fundamentals:** Learn from fundamental concepts to advanced techniques.
+- **Express for Robust Projects:** Develop robust and scalable projects with Express.
+- **Efficient MVC Pattern:** Master the MVC pattern to efficiently organize your Node projects.
+- **Creation of Complete APIs:** Develop complete APIs with Node and Express.
+- **Database Integration:** Perform operations and integrate Node.js with MySQL, Sequelize, MongoDB, and Mongoose.
+
+## Course Objectives
+
+This course aims to provide a deep understanding of Node.js technology, empowering you to develop robust and scalable applications. Throughout the course, you will:
+
+- Master the fundamentals of Node.js and Express.
+- Efficiently apply the MVC pattern in your projects.
+- Develop complete APIs using Node and Express.
+- Integrate Node.js with MySQL, Sequelize, MongoDB, and Mongoose databases.
+- Build dynamic and efficient web applications.
+
+## Course Content
+
+The course is divided into 29 sections, totaling 481 lectures with a duration of 38 hours. Some of the topics covered include:
+
+- Fundamentals of Node.js.
+- Node Core Modules.
+- Fundamentals of NPM.
+- Creating applications in pure Node, without frameworks.
+- Web development with Express.
+- Manipulation of relational and non-relational databases.
+- MVC architecture pattern.
+- Development of RESTful APIs.
