@@ -1,0 +1,143 @@
+-- Resumo Secao 01: Introducao - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 01: Introducao - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Esse curso ira abordar diversos temas paralelos ao node, como express com nodejs, aprenderemos a integrar o node com bd relacionais como MySQL e nao relacionais como MongoDB, iremos utilizar tambem frameworks para agiliar o desenvolvimento, como ORM, Sequelize, ODM, mongoose.
+Aprenderemos tambem arquetetura MVC, para estrutrar melhor as app, deixando o proejto organizados.
+Iremos ver tambem topicos como teample engine com handdle bars, com app js com view dinamicas e tambem iremos ver topicos importantes sobre API's para criar app node que se comunicam com o front-end desaclopado da app.
+A cada secao, iremos criar um projeto para por em pratica os conhecimentos adquiridos na video aula.
+
+Esse curso esta dividido em 29 secoes, onde cada qual secao abordara um topico especifico para agregar no nosso conhecimento em app nodejs
+
+1- Introducao -> Nessa secao, iremos conhecer os principais aspectos do nodejs, iremos aprender a como instalar o nodejs na maquina, criar o primeiro program e rodar esse programa
+2- Fundamentos Node.js -> Recursos essenciais para aprender nodejs da melhor forma possivel, onde falaremos de modulos extenos, internos, core modules, maneiras de execucao, scrptis, ou seja, todos os assuntos que formam o alicerce de conhecimento do nodejs, e um passo muito importante
+3- Node Core Modules na pratica -> Sao os modulos internos, que vem junto do node e estao pronto para uso, essa secao sera um aprofundamento deste tema, visto que o mesmo e muito utilizado em diversar areas.
+4- Fundamentos do npm -> Nessa secao, iremos aprofundar no gerenciador de pacotes do node, entender como ele funciona, como criar projetos e pacotes com esse gerenciador npm
+5- Projeto 1: Accouts -> Nessa etapa, iremos desenvolver o primeiro projeto, onde iremos trabalhar exclusivamente com node, o mesmo sera rodado no terminal
+6- Introducao ao Express -> Iremos aprender nessa secao, o express, que um framework muito utilizado para trabalhar com nodejs
+7- Teamplate Engine com Express -> Deixar o codigo mais dinamico, evoluindo no passo anterior
+8- Integracao Node.js com MySQL -> Nessa secao, iremos aprender como utilizar o nodejs com bd relacionais como o MySQL, sempre construindo mini projetos para fixar conhecimentos
+9- Utilizando Sequelize Node.js -> Nessa secao, iremos intregar um ORM, que e como se fosse um framework de BD relacionais com Sequelize
+10- Arquitetura MVC no Node.js -> Nessa secao, iremos aprende MVC para que sejam aplicadas boas praticas de programcao, como clean code, uma boa estrutracao das pastas
+11- Projeto 2: Toughts (Express, Sequelize e MVC) -> Nessa etapa, iremos criar um projeto mais complexo, com busca, limpeza de filtros, ordenacao, cadastro, etc.
+12- Node.js com MongoDB -> Vamos aprender nessa secao a utilizar o nodejs com MongoDB
+13- Adaptando mongoose ao nosso projeto -> Iremos aprofundar mais um pouco nessa secao, onde iremos utiliza uma ODM, que e como se fosse um framework de bd para MongoDB, que e o mongoose, vendo dois tipos de bd, relacional e nao relacional
+14- Introducao a API's -> Nessa secao, iremos entende o conceito de API, que e req e res
+15- Projeto 3: Get A Pet (API, RESTfull, Express, MVC, MongoDB com mongoose, React) -> Criando um projeto completo nessa secao 
+16- Masterclass sobre React -> Vamos aprender um pouco de front-end em react nessa secao
+17- Apendice A: Avancando no npm -> Nessa secao, iremos aboradar de forma mais a fundo o npm
+18- Apendice B: Introducao no HTML -> Nessa secao, iremos abortar o tema de html de maneira mais aprofundada
+19- Apendice C: Introducao ao CSS -> Nessa secao, iremos abortar o tema de css de maneira mais aprofundada
+20- Apendice D: Projeto com HTML e CSS (Wathsapp Web clone) -> Nessa secao, iremos criar um projeto utilizando html css
+21- Apendice E: Criacao de banco de dados MySQL -> Nessa secao, iremos abortar o tema de MySQL de maneira mais aprofundada
+22- Apendice F: Criacao de tabelas com MySQL -> Nessa secao, iremos abortar o tema de MySQL de maneira mais aprofundada
+23- Apendice G: CRUD com MySQL -> Nessa secao, iremos criar um projeto com CRUD em MySQL
+24- Apendice H: Gerenciamento de banco dados com MongoDB -> Nessa secao, iremos abortar o tema de MongoDB de maneira mais aprofundada
+25- Apendice I: Insercao de dados com MongoDB -> Nessa secao, iremos abortar o tema de MongoDB de maneira mais aprofundada
+26- Apendice J: Leitura de dados com MongoDB -> Nessa secao,  iremos abortar o tema de MongoDB de maneira mais aprofundada 
+27- Apendice K: Atualizacao de dados com MongoDB -> Nessa secao, iremos abortar o tema de MongoDB de maneira mais aprofundada
+28- Apendice L: Exclusao de dados com MongoDB -> Nessa secao, iremos abortar o tema de MongoDB de maneira mais aprofundada
+29- Apendice M: Aula sobre Fetch API -> Nessa secao,  iremos abortar o tema de Fetch API de maneira mais aprofundada
+
+Obs1: A parti da secao 17 desse curso, sao conteudos adicionais, para aprofundar um pouco mais sobre os conceitos
+Obs2: MongoDB trabalha com metodo e o MySQL com querry
+Obs3: Se tiver att o curso sera atualizado
+
+O que e Node.js? 
+- O nodejs e uma runtime de JavaScript, ou seja, escrevemos JS
+- Ou seja, uma biblioteca utilizada por um compilador durante a execucao do programa, deixando o codigo mais rapido
+- Que esta construida na V8 engine (escrite em C++) da Google, Podemos dizer que nodejs e uma biblioteca, onde escrevemos js e compilamos em C++ 
+- Possibilitando criar sofwares em Js no lado do servidor
+- Temos um codigo JS rodando em C++ para garantir a alta performace
+
+O node e basicamente uma ponte, onde vemos js e escrevemos js, mas compilamos em C++
+
+O que e npm?
+- O npm e um gerenciador de pacotes do node
+- Vamos poder utilizar bibliotecas de terceiros, baixando elas pelo npm
+- E tambem executar determinados scripts no nosso programa, varios comando executados por meio de um comando apenas
+- Dificilmente um software em Node.js nao utiliza o npm
+- Os modulos externos ficam numa pasta camada node_modules, pasta onde todas bibliotecas vao ficar
+- Ela deve ser descartavel, ou seja, a cada instalacao do projeto baixamos todos os pacotes novamente
+
+npm = node package magner
+Obs1: o npm e utilizado para iniciar os projetos nodejs
+
+Instalacao do Node Windows:
+- O download do node.js deve ser feito no site oficial
+- Vamos baixar um arquivo .msi, que é o instalador executavel, e sempre a versao LTS (Long Time Suport);
+- É interessante saber que o npm vem junto do Node;
+- Após a instalação podemos testar o Node e o npm em um terminal, para validar a instalação;
+Obs1: Note que os binários precisam estar no PATH, este passo está na instalação do Node;
+
+Instalacao do Node Linux:
+- O download do node.js e feito no site oficial ou via terminal via homebrew ou sudo
+- Vamos vaixar um executaval que nicializa a instalacao
+- Podemos notar que o npm vem junto do Node
+- Apos a instalacao precisamos validar em um terminal
+
+Instalação VS Code:
+- Ao longo do curso o editor utilizado será o VS Code;
+- Ele tem algumas vantagens em trabalhar com Node também, como o
+terminal integrado, extencoes, etc;
+- Além de ser atualizado constantemente, é mantido pela Microsoft;
+- Muito utilizado no ambiente corporativos
+
+Terminal para Windows:
+- Caso seja necessário, vamos utilizar o cmder como terminal no Windows, devido ao terminal do VSCode nao chega a alguns comandos do terminal do linux por ta no windows;
+- Este software não quer instalação;
+- E é muito semelhante ao terminal do Linux;
+- Geralmente utilizamos servidores em Linux, então estar acostumado com este tipo de terminal é de grande ajuda;
+- Além disso, algumas ferramentas como Node e Docker, por exemplo, utilizam muito o terminal;
+
+Executando o Node:
+- Na maioria das vezes estaremos executando o Node via arquivos do nosso projeto;
+- Porém é possível também executá-lo via terminal;
+- Basta digitar: node
+- O Node.js possui todas as funcionalidades de JavaScript;
+- O nome do recurso é REPL (Read Evaluate Print Loop) 
+- Porem quando saimos da execucao do node e voltamos novamente, tudo o que fizemos foi perdido
+- O REPL e um ambiente de teste em nodejs
+
+Nosso primeiro programa:
+- Agora vamos criar algo mais sólido, um programa simples baseado em
+um arquivo;
+- A extensão dos arquivos de Node serão .js
+- Vamos executar o arquivo com o comando: node <arquivo>
+- O código será interpretado e o programa executado;
+- O node possui diversas funcionalidades de js, com execao das funcionalidades especificas de browser nao foram transferidas para o node.
+
+Utilizando um módulo:
+- A ideia do node e que podemos criar nosso modulos, usar modulos de terceiros, e utilizar modulos do proprio node ja pronto.
+- Agora vamos evoluir o nível de nossos programas;
+- Importaremos um módulo do Node: o File System;
+- Este módulo serve para trabalhar com diretórios, arquivos e etc;
+- E ele é um Core Module, ou seja, não é necessário instalar, o node disponibliza para gente;
+- Veremos mais sobre modules ao longo do curso;
+- Podemos importar módulos com a instrução import;
+- Podemos importa modulos com o require, o require e uma forma de importar padrao do nodejs, onde atribuimos o modulo em uma variavel.
+- Geralmente utilizamos o nome da variavel como o nome do modulo, visando boas praticas.
+- Modulos geralemnte possuem metodos, eles sao como classes/objetos, como por exemplo o metodo apresentado em aula, readFile para ler arquivos em um determinado diretorio, onde passamos por paramentro, o diretorio do caminho, o utf da linguaguem no qual voce esta utilizando, e uma funcao anonima, onde podemos receber o erro ou data, onde passamos uma arrowfunction como referencia, semelhante ao sintex suggar que e uma sintaxe mais resumida de algo.
+
+Repositório do curso: 
+- Todos os arquivos do curso estão no GitHub, em um repositório público;
+- É interessante que você faça o download para poder acompanhar com o código e também resolver possíveis problemas;
+- O link é: https://github.com/matheusbattisti/curso_node
+- Há um artigo na sequência que disponibiliza o link para o repo e também dá mais instruções;
+
+Como tirar o melhor proveito:
+- Faça todos os exercícios, eles foram pensados em agregar no aprendizado e fixar conhecimento;
+- Crie o código junto comigo!
+- Tente responder as dúvidas de outros alunos;
+- Crie projetos práticos, teste coisas novas;
+- Dica extra: ouça e depois pratique;
+
+Tarefa 01:
+1. Crie um novo projeto de Node.js;
+2. Crie um arquivo para a aplicação com o nome programa;
+3. No arquivo crie duas variáveis e imprima a soma delas;
+4. Execute o arquivo e verifique a resposta no terminal;
+
+A resolucao estara na pasta exercicios/exercicio_proposto
+
+Ao fim dessa secao, instalamos as ferramentas necessárias para instalacao do node, e como executar nossa primeira app em nodejs, aprendemos um pouco sobre cormodules
