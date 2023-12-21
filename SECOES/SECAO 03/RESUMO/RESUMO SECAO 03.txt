@@ -1,0 +1,125 @@
+-- Resumo Secao 03: Node Core Modules - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 03: Node Core Modules - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos explorar os modulos core do node mais utilizados, e tentar fazar uniao com os mesmos, para tirarmos proveitos e vermos em quais cenarios quais core modules devem ser utilizados.
+
+Sobre os Core Modules:
+- Vamos ver diversos Core Modules em detalhes, que são fundamentais para criação de softwares em Node;
+- http: módulo para criar servidores HTTP;
+- path: extrair informações de paths (caminhos) de arquivos;
+- fs: file system, leitura e escrita de arquivos;
+- url: módulo para trabalhar com URLs, como saber os parametros, qual a requisicao, etc;
+- Esses 4 tem importancia maior no dia a dia do desenvolvedor
+
+O módulo http:
+- Podemos criar um servidor HTTP com este módulo;
+- Ou seja, receber uma requisição e enviar código HTML como resposta, por exemplo;
+- Vamos utilizar alguns métodos como createServer, para criação/inicializacao do servidor;
+- E também listen, para determinar a porta;
+- Tudo isso deve ser devidamente configurado para que o servidor HTTP possa funcionar corretamente
+- Em app web recebemos requisicoes em damos respostas.
+- Utilizando o .write podemos escrever algo para o usuario
+- Porem devemos encerar a resposta com o comando .end se nao fica respondendo infinitamente
+
+- Para intanciar um servidor HTTP, utilizamos a seguinte sintaxe:
+server = http.createServer((req, res) => { conteudo da requisocao e resposta })
+server.listen(port, () => { 'Servidor rodando na port X'} ) -> Utilizamos a funcao de call back para informar que esta tudo ok com o servidor
+- Com isso, conseguimos intanciar uma app web simples utilizando node.
+
+Parando o serviço:
+- Há alguns serviços do Node que ocupam a aba do terminal para continuar rodando;
+- Um destes é o módulo http, ele bloqueia o terminal, deve-se para o servico ou abri outra aba do terminal;
+- Para parar este serviço basta utilizar: ctrl + c;
+- Isso é útil quando há um problema no código também;
+
+Retornando HTML com o http:
+- Para retornar HTML precisamos implementar mais recursos;
+- Podemos adicionar um status code no retorno, com a propriedade .statusCode, como 300 para tudo certo;
+- Mudar os headers para text/html, para conseguir enviar outro tipo de dado, utilizando o metodo setHeader('Content-tipe', 'type');
+- E retornar o HTML pelo método end do http, visto que agora o metodo end vai aceitar mandar o HTML e nao apenas texto igual no codigo anterior;
+- Com isso podemos renderizar paginas HTML com o servidor node.
+
+Atualizações de projeto:
+- Para emitir as atualizações do projeto precisamos sempre reiniciar o servidor;
+- Ou seja: salvar, encerrar e reiniciar, este é o processo;
+- Isso é terrível para a produtividade! xD
+
+Módulo url:
+- O módulo url serve para decompor uma URL que passamos para o método parse que consegue fazer o resgate de um dado que veio na html, atraves da seguinte sintaxe:
+const parsedUrl = new url.URL(addres)
+- Podemos resgatar: host, path, search, query e etc, atraves da seguinte sintaxe:
+parsedUrl.host, etc.
+- A partir destas informações podemos alterar a lógica do nosso código;
+
+Unindo os módulos http e url:
+- Podemos trabalhar com estes módulos juntos e ter um resultado interessante;
+- Com o http criamos nosso server e alteramos a resposta baseado na URL acessada;
+- Com url processamos os parâmetros que vem pela query string, para alterar a lógica do http, como por exemplo receber um nome via parametro http;
+- Podemos utilizar os modulos core utilizando apenas o require('nome').metodo.
+
+Módulo fs:
+- O módulo fs (File System) serve para trabalhar com arquivos e diretórios;
+- Este é também um Core Module;
+- Podemos ler(readFile) e escrever(writeFile) em arquivos, por exemplo, podemos abrir e ler arquivos html com o servidor http como outro exemplo;
+- Uma utilização interessante: logs do sistema;
+
+Escrevendo em arquivos:
+- Podemos criar e escrever em arquivos também, utilizando o método writeFile;
+- Esta escrita pode estar associada a um conjunto de operações;
+- Como o envio de informações de um usuário, por exemplo;
+- Nessa etapa, etamos unindo os modulos http para pegar requiscoes http e instanciar um servidor, fs para ler e escrever em arquivos, e url para extair informacoes das requisoces.
+- O codigo 302 e o codigo de redirect, onde conseguimos redirecionar caso acontecer determinada acao, redirecionar-se para uma determinada pagina.
+
+Atualizando um arquivo:
+- O writeFile substitui tudo que está em um arquivo;
+- E se quisermos atualizar, para este fim utilizamos o appendFile;
+- Que tem a mesma utilização que write, porém nos permite unir conteúdo;
+
+Removendo um arquivo:
+- Para remover um arquivo com o fs utilizamos o método unlink;
+- Precisamos passar o arquivo como parâmetro;
+- Temos a possibilidade de checar se houve algum erro, a partir da callback retornada;
+
+Renomeando um arquivo:
+- Para renomear um arquivo com o fs utilizamos o método rename;
+- Precisamos passar o arquivo como parâmetro;
+- E também o novo nome!
+- Neste método também podemos verificar algum eventual erro, pela callback;
+- Que pode ser ativado quando o arquivo alvo não existe;
+
+Rotas com Node.js puro:
+- Podemos criar um sistema de roteamento simples com Node.js e seus Core Modules, basciamente quase fizemos isso ao decorrer das aulas, ao redirecionar para alguma pagina, ou salvar em arquivos txt os dados de um form, so que agora iremos rederecionar para outras paginas, como por exemplo uma pagina home quando o usuario faz login;
+- As rotas são basicamente as páginas que acessamos nos sites, como "/", "/home", "/home/produtos", etc.;
+- Vamos falar mais sobre esse recurso em outros módulos;
+- A ideia é identificar os arquivos acessados pela URL e retorná-los, se existirem;
+- Para sabermos qual o nome do arquivo, podemos obter essa informacoa utlizanod o pathname.substring(1), deve-se pegar a parte 1 pois na parte 0 e / e na parte 1 em diante, conseguimos pegamos o nome do arquivo.html
+- Podemos utilizar o metodo inclues para verificar se o arquivo possui uma determinada string.
+- Para criar as rotas, devemos sempre verificar se o arquivo e html e se o mesmo existe.
+- Caso o arquivo nao exista, deve-se mostrar uma pagina de 404.
+
+Detalhes de arquivos:
+- Podemos saber mais sobre os arquivos que temos acesso;
+- Utilizamos o método stat de fs;
+- Com ele temos informações de: tamanho, data de criação, se é arquivo ou diretório e etc;
+
+Módulo path:
+- Com o modulo path conseguimos extrair diversas informações sobre caminhos e arquivos;
+- Este também é um Core Module;
+- Algumas infos possíveis são: nome do diretório(dirname), nome do arquivo(basename), extensão(extname) do arquivo e etc;
+
+Path absoluto e formar path:
+- Com a função resolve é possível saber qual o path completo até o arquivo alvo;
+- E com a função join é possível formar um path dinâmico, com variáveis e valores fixos;
+- São duas funções muito importantes;
+
+Trabalhando com diretórios:
+- Com o módulo fs também podemos trabalhar com diretórios (pastas);
+- O método exists pode evidenciar se um diretório existe ou não;
+- E o método mkdir pode criar um diretório;
+
+Módulo os (operacional system):
+- Com o módulo os podemos extrair informações do sistema operacional, como cpus, memoria livre, etc;
+- Este também é um Core Module;
+
+Nessa secao, aprendemos sobre os principais core modules do node e suas funcionalidades, criamos diversos projetos para reforcar o conhecimento com pratica.
