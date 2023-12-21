@@ -1,0 +1,75 @@
+-- Resumo Secao 04: Fundamentos NPM - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 04: Fundamentos NPM - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos falar sobre npm, que e o gerenciador de pacote do node, onde nessa secao iremos aprofundar um pouco mais no npm.
+
+O que é npm:
+-É o principal gerenciador de pacotes do Node.js;
+-A sigla significa: Node Package Manager, premitindo-nos instalar, atualizar, remover e outras coisas como executar scripts em um unico comando;
+-A maioria dos projetos que vamos trabalhar em Node, também terá atuação do npm;
+-Podemos não só instalar pacotes, mas também configurar o projeto e rodar scripts por meio do npm;
+-A criação de um projeto gera sempre um arquivo, o package.json;
+-Tambem temos outro gerenciador de pacotes de Node.js chamado yarn, mesma funcionalidade do npm
+-No npmregistre, podemos registrar um pacote para download publico para outras pessoas
+-Pacotes com poucos download e poucas avaliacoes nao e muito confiavel!!
+-O package.json e muito importante para podermos analisar um codigo em node.js, pois nele podemos observar quais foram os pacotes utilizados para o desenvolvimento daquele projeto.
+
+Criando um projeto com npm:
+-Para iniciar um projeto, podemos utilizar o comando npm init;
+-Seremos questionados para configurar algumas opções iniciais;
+-Como o nome do projeto;
+-E então um package.json condensando as informações é criado;
+-Isto caracteriza o início do projeto com npm e Node;
+-Podemos utilizar o npm init -y para inicializar projeto mais rapido, o -y faz com uq responda tudo como yes
+
+Instalando um pacote:
+-Podemos consultar os pacotes existens no npmregistre, podendo ser encontrado no site da npm
+-Para instalar um pacote vamos utilizar o comando npm install <nome>
+-Onde <nome> será substituído pelo nome do pacote;
+-Quando fazemos desta maneira a instalação uma pasta node_modules é criada;
+-Nela todos os arquivos de módulos de terceiro são armazenados, e nao devemos alterar a mesma;
+-Sempre que rodarmos o comando npm install, a pasta node_modules é recriada com todos os módulos do package.json;
+-O pacote lodash e importado em uma variavel chamada "_" como o JQuery que era um "$"
+
+Instalando um pacote como dev:
+-Há uma possibilidade de instalar pacotes apenas para o ambiente de desenvolvimento;
+-Utilizamos a flag --save-dev;
+-Isso faz com que ele seja separado no package.json dos demais, sendo separado pela tag devDependecies;
+-E então na build de produção não instalaremos estes módulos;
+-Um exemplo: servidor para ambiente local, como o Nodemon, que serve para cerregar as alteracoes feitas no codigo de forma automatica;
+
+Atualização de pacotes:
+-Constantemente os pacotes do npm são atualizados por seus desenvolvedores;
+-Temos então o comando npm update;
+-Que vai fazer a atualização de todos os pacotes instalados no package.json;
+-É possível atualizar um pacote específico com npm update <nome> 
+-Para verificare e de fato atualiza se alguma dependecia do proejto possui atualizacao, utilizamos o comando npx npm-check-updates -u, com isso ele verifica se ha dependecias que necessitam e atualizacao, caso encontrar, basta dar o npm install
+-O npx e um executador de pacote do node
+
+Criando scripts:
+-É possível criar rotinas com o npm também;
+-Ou seja, executamos uma série de comandos com apenas um;
+-Utilizamos npm run <script>
+-Onde <script> é o nome da sequência de comandos que configuramos, no package.json;
+-O comando start pode ser rodado apenas com npm start nao precisa do run.
+
+Instalando pacote global:
+-Um pacote global não fica salvo na pasta node_modules do projeto;
+-Ele fica salvo no computador do usuário;
+-A vantagem é que podemos acessá-lo em qualquer local via terminal;
+-Utilizamos a flag -g em node install;
+-Podemos ter pacotes que necessitam dos arquivos no pc, para isso, devemos utlizar o comando npm link nome_pacote para que baixe os arquivos necessario para o funcionamento deste pacote.
+-O mesmo se instalado de forma global nao tem sua dependencia salva no package.json
+
+Executando scripts com npx:
+-Alguns pacotes são scripts executáveis, que resultam em alguma ação no nosso computador;
+-Como por exemplo a instalação do React, que é feita pelo npx;
+-Desta maneira uma série de processos são simplificados por este executor;
+
+Remover pacote com npm:
+-Para remover um pacote utilizamos o comando: npm uninstall <nome>
+-Substituindo <nome> pelo nome do pacote;
+-Isso faz com que o pacote seja removido do package.json também;
+
+Com a conclusao dessa secao, aprendemos como trabalhar com npm para poder trabalhar da melhor forma possivel em desenvolvimentos de novos projetos.

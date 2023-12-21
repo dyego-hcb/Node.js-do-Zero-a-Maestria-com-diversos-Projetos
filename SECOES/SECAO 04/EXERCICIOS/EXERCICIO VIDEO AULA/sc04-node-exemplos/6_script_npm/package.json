@@ -1,0 +1,19 @@
+{
+  "name": "3_instalando_pacotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sc04-node-exemplo06.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node sc04-node-exemplo06.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2"
+  }
+}

@@ -4,6 +4,22 @@
 
 Nesta primeira seção, "Introdução", começamos a explorar os fundamentos do Node.js.
 
+### Estrutura do Repositório
+
+- **Resumo da Seção:**
+   - Localizado na pasta [Resumo](./RESUMO/), fornece uma visão detalhada dos tópicos abordados.
+
+- **Exemplos Práticos:**
+   - Encontrados na pasta [Exercicio Video Aula](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/).
+
+- **Exercícios Propostos e Soluções:**
+   - Disponíveis na pasta [Exercicio Proposto](./EXERCICIOS/EXERCICIO%20PROPOSTO/).
+
+- **Tarefa 01:**
+   - Criação de um novo projeto Node.js.
+   - Desenvolvimento de duas variáveis e exibição da soma.
+   - A solução está na pasta [Tarefa 01](./EXERCICIOS/EXERCICIO%20PROPOSTO/TAREFA%2001/).
+
 ### Conteúdo Abordado
 
 1. **O que é Node.js?**
@@ -26,31 +42,6 @@ Nesta primeira seção, "Introdução", começamos a explorar os fundamentos do 
    - Importância dos módulos no Node.js.
    - Exemplos práticos com o módulo File System.
 
-### Estrutura do Repositório
-
-- **Resumo da Seção:**
-   - Localizado na pasta [Resumo](./RESUMO/), fornece uma visão detalhada dos tópicos abordados.
-
-- **Exemplos Práticos:**
-   - Encontrados na pasta [Exercicio Video Aula](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/).
-
-- **Exercícios Propostos e Soluções:**
-   - Disponíveis na pasta [Exercicio Proposto](./EXERCICIOS/EXERCICIO%20PROPOSTO/).
-
-- **Tarefa 01:**
-   - Criação de um novo projeto Node.js.
-   - Desenvolvimento de duas variáveis e exibição da soma.
-   - A solução está na pasta [Tarefa 01](./EXERCICIOS/EXERCICIO%20PROPOSTO/TAREFA%2001/).
-
-- **Repositório do Curso:**
-   - Todo o código está no [repositório público do GitHub](https://github.com/matheusbattisti/curso_node) para referência.
-
-### Como Tirar o Melhor Proveito
-
-- Complete os exercícios práticos para solidificar o conhecimento.
-- Acompanhe as aulas codificando junto para uma compreensão prática.
-- Participe ativamente das discussões na comunidade do curso.
-
 Ao final desta seção, você terá não apenas instalado as ferramentas essenciais do Node.js, mas também executado sua primeira aplicação e compreendido os fundamentos dos Core Modules.
 
 ***
@@ -60,6 +51,22 @@ Ao final desta seção, você terá não apenas instalado as ferramentas essenci
 ## Section 01: Introduction
 
 In this initial section, "Introduction," we begin to explore the fundamentals of Node.js.
+
+### Repository Structure
+
+- **Section Summary:**
+   - Located in the [Summary](./RESUMO/) folder, providing a detailed overview of the covered topics.
+
+- **Practical Examples:**
+   - Found in the [Exercise Video Lesson](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/) folder.
+
+- **Proposed Exercises and Solutions:**
+   - Available in the [Proposed Exercise](./EXERCICIOS/EXERCICIO%20PROPOSTO/) folder.
+
+- **Task 01:**
+   - Creating a new Node.js project.
+   - Developing two variables and displaying their sum.
+   - The solution is in the [Task 01](./EXERCICIOS/EXERCICIO%20PROPOSTO/TAREFA%2001/) folder.
 
 ### Covered Topics
 
@@ -82,30 +89,5 @@ In this initial section, "Introduction," we begin to explore the fundamentals of
 5. **Using Modules:**
    - The significance of modules in Node.js.
    - Practical examples with the File System module.
-
-### Repository Structure
-
-- **Section Summary:**
-   - Located in the [Summary](./RESUMO/) folder, providing a detailed overview of the covered topics.
-
-- **Practical Examples:**
-   - Found in the [Exercise Video Lesson](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/) folder.
-
-- **Proposed Exercises and Solutions:**
-   - Available in the [Proposed Exercise](./EXERCICIOS/EXERCICIO%20PROPOSTO/) folder.
-
-- **Task 01:**
-   - Creating a new Node.js project.
-   - Developing two variables and displaying their sum.
-   - The solution is in the [Task 01](./EXERCICIOS/EXERCICIO%20PROPOSTO/TAREFA%2001/) folder.
-
-- **Course Repository:**
-   - All code is available in the [public GitHub repository](https://github.com/matheusbattisti/curso_node) for reference.
-
-### Getting the Most Out of It
-
-- Complete practical exercises to solidify your understanding.
-- Follow along with the coding exercises for hands-on experience.
-- Actively participate in community discussions during the course.
 
 By the end of this section, you will not only have installed essential Node.js tools but also executed your first application and grasped the fundamentals of Core Modules.

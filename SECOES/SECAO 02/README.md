@@ -79,7 +79,7 @@ Welcome to Section 02 of the "Node.js from Zero to Mastery with Various Projects
   - Located in the [Summary](./RESUMO/) folder, providing a detailed summary of the topics covered.
 
 - **Practical Examples:**
-  - Found in the [Exercise Video Lesson](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/) folder.
+  - Found in the [Video Exercise](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/) folder.
 
 - **Proposed Exercises and Solutions:**
   - Available in the [Proposed Exercise](./EXERCICIOS/EXERCICIO%20PROPOSTO/) folder.

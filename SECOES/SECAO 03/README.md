@@ -10,7 +10,7 @@ Bem-vindo à Seção 03 do curso "Node.js do Zero à Maestria com Diversos Proje
   - Localizado na pasta [Resumo](./RESUMO/), fornece um resumo detalhado dos tópicos abordados.
 
 - **Exemplos Práticos:**
-  - Encontrados na pasta [Exercício em Vídeo](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/).
+  - Encontrados na pasta [Exercicio Video Aula](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/).
 
 ### Tópicos Abordados
 
