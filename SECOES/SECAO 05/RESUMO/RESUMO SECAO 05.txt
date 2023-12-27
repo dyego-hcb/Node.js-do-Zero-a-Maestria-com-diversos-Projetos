@@ -1,0 +1,38 @@
+-- Resumo Secao 05: Projeto 1: Accounts - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 05: Projeto 1: Account - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos criar um projeto chamado accounts que sera basicamente simula o funcionamento de um banco, que nao tera interface grafica, o mesmo sera totalmente via terminal e via node.js, onde iremos poder realizar as seguintes acoes, como criar uma conta, depoistitar, consultar saldo, sacar, e sair
+
+O projeto estara contindo no seguinte repositorio do github, disponivel no link abaixo:
+
+https://github.com/dyego-hcb/projeto_accounts_nodejs
+
+link
+
+Abaixo, iremos listar o passo a passo para o desenvolvimento desse projeto, juntamente com algumas anotacoes que acharmos importante.
+
+Passo 1 - Setup Inicial -> Primeiro passo e iniciar o projeto, como estamos utilizando node, devemos utilizar o npm init, apos feito isso, devemos instalar os pacotes que serao utilizados, no nosso caso, iremos utilizar o fs, o chalk e o inquirer, e tambem a criacao de scripts para rodar algum comando com o node
+
+Passo 2 - Inicializacao do Sistema -> Nesse segundo passo, iremos desenvolver as operacoes no qual o sistema ira iniciar, por exemplo, um menu mostrando algumas opcoes para onde o cliente pode ir, como criar conta, etc, para isso, iremos criar uma funcao, onde iremos ter um proompt para o usuario escolher uma opcao, para ele escolher uma opcao, utilizamos a funcao do inquirer.proompt([type: 'tipo_obj', name: 'nome_da_pergunta', message: 'Msg', choies: 'lista de opcoes','',...]), como se trata de promises, quando terminar uma execucao, devemos utilizar a clausula then, que e quando o usuario selecionar alguma opcao, deve-se tratar eventuais erros com o catch, com isso com a clausula then, podemos pegar a resposta que o usuario deu e manipula-la de alguma forma, como por exemplo redirecionar para alguma outra interface ou mostrar outra msg ou realizar determinada acao, utilizando o answer['nome_msg']
+
+Passo 3 - Criacao de Conta -> Nessa etapa, iremos desenvolver a nossa primeira acao, que e a criacao de conta, onde teremos uma fucao que ira criar uma conta, onde a mesma so sera invocanda quando usuario selecionar a opcao de criar conta
+
+Passo 4 - Finalizando criacao de conta -> Nessa etapa, iremos finalizar o desenvolvimento de criacao de contas, criadno uma funcao que ira receber as informacoes do usuario e criar a conta do mesmo, a conta sera salvo em um arquivo.json com o nome da conta no qual foi criada e com um saldo de 0, quando tiver algum err por exemplo de conta existe, devemos utilizar o return para retornar e nao entrar em loop, para que o input anteriro nao seja lido como entrada
+
+Passo 5 - Acao de encerrar o programa -> Nessa etapa, iremos desenvolver o metodo de finalizar programa, utilizando o metodo process.exit
+
+Passo 6 - Iniciando funcao de deposito -> Nessa etapa, iremos comecar a desenvolver nosso metodo de deposito, onde iremos realizar algumas verificacoes, como o numero da conta se e uma conta existe, valores negativos, etc.
+
+Passo 7 - Adicao de saldo -> Nessa etapa, iremos finalizar a funcao de deposito, agora nessa etapa, iremos receber informacoes sobre o valor no qual o usuario quer depositar, e adicionar esse valor na conta, caso tenha muito acentos, deve-mos converte o js utilizando metodo utf8, a flag r e apenas para ler, a funcao JSON.parse() converte para json, com isso, conseguimos retornar um objeto json para o programa, fazendo com que fique mais facil de alterar os dados do arquivo
+
+Passo 8 - Consulta de saldo -> Nessa etapa, iremos desenvolver a funcao que mostra o saldo do cliente da conta, se a mesma existir
+
+Passo 9 - Iniciando funcao de saque -> Nessa etapa, iremos iniciar o desenvolvimento da funcao de sacar, onde devemos ficar atentos a certos detalhes, como se a conta existe, se tem saldo suficiente para sacar, etc,
+
+Passo 10 - Finalizando funcao de saque -> Nessa etapa, iremos finalizar a funcao de saque, onde iremos fazer as verificoes acima, no topico anterior apenas pegamos as informacoes.
+
+OBS1: Para acessar determinados tipos de informacoes de arquivo JSON, basta converterlo para JSON e armazenar em uma variavel e utilizar .nome_Atributo para acessar informacoes daquele atributo do aqruivo JSON.
+OBS2: Para reforcar o conhecimento, foi implementado mais 2 metodos 1 de simulacao de emprestimo que retorna quanto seria um valor de um emprestimo para um determinado valor e transferencia entre contas.
+
+Conclusao do projeto -> Utilizamos core modulues como o inquire e o chalk e modulos extenos como o fs, aprendemos a delegar a logica para cada uma funcao, para visar reutilizacao de codigo, aprendemos a criar programas em nodejs com interface via terminal, recebendo as entradas por prompts

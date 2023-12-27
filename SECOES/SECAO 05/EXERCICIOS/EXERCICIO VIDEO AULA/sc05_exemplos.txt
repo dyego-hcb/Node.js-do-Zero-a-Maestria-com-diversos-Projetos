@@ -1,0 +1,5 @@
+Nessa secao iremos criar um projeto chamado accounts que sera basicamente simula o funcionamento de um banco, que nao tera interface grafica, o mesmo sera totalmente via terminal e via node.js, onde iremos poder realizar as seguintes acoes, como criar uma conta, depoistitar, consultar saldo, sacar, e sair
+
+O projeto estara contindo no seguinte repositorio do github, disponivel no link abaixo:
+
+https://github.com/dyego-hcb/projeto_accounts_nodejs
