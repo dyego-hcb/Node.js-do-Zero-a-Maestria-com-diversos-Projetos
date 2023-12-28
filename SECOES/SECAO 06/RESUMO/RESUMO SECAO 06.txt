@@ -1,0 +1,104 @@
+-- Resumo Secao 06: Introducao ao Express - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 06: Introducao ao Express - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos falar sobre o express que e um framework para back-end que e muito utilizado em nodejs, podemos criar projetos com page reload, apis.
+
+O que é Express?
+- Um framework para Node.js muito utilizado;
+- Serve para criarmos aplicações web, desde aplicacoes que renderizao html estatica a aplicacoes com dados dinamicos;
+- Nele podemos criar rotas, renderizar HTML, conectar a um banco de dados, autenticacao, padroes de arquitetura, desacoplar o front do back com apis;
+- O Express torna a criação de apps muito mais simplificada, do que com os Core Modules;
+- Temos o adonesjs que e um framework que possui muita coisas juntas, o express nao, e semelhante ao nodejs, devemos falar quais pacotes vamos utilizar em determinado momento, basicamente a gente monta os pacotes que iremos utilizar
+- Podemos instalar o expres utilizando o npm, com o seguinte comando npm install express
+
+O que são rotas?
+- Rota é um conceito super importante e presente em aplicações web;
+- Basicamente são as URL’s que acessamos;
+- Se criamos uma rota /produtos, podemos acessar através da URL www.nossosite.com/produtos;
+- Quando o usuário acessa podemos acessar várias lógicas, como carregar produtos do banco de dados;
+- Ou seja, rotas são uma ponte entre o usuário e a lógica da aplicação;
+
+Primeiros passos
+- O setup inicial do Express é simples, mas precisamos seguir alguns passos;
+- Importar o Express e invocá-lo;
+- Definir uma porta base para a aplicação;
+- Criar uma rota (URL que será acessada);
+- Executar o método listen na porta especificada;
+- Ao tratar de aplicacoes web, sempre vamos ter requisicoes do usuario que recebemos e resposta do servidor envia uma resposta, ambas devem ser tratados
+
+Renderizando HTML
+- Para enviar HTML como resposta utilizamos o método sendFile, onde passamos o caminho do arquivo html que queremos renderizar;
+- Isso faz com que o arquivo seja renderizado no navegador;
+- Precisamos acessar o arquivo por meio do diretório base, isso requer o módulo path;
+
+Problema de atualização
+- Precisamos toda vez reiniciar o servidor para receber as atualizações, isso é muito custoso;
+- Vamos então instalar o módulo Nodemon, com npm install --save-dev nodemon;
+- Que a cada vez que o arquivo é salvo reinicia o projeto, facilitando nossa vida;
+- Vamos salvar como dependência de desenvolvimento (--save-dev), isso e uma boa pratica;
+- Apos feito isso, deve-se cirar um sript com nodemon nome_Arquivo endereco_servidor porta
+- Apos definir o script, devemos utilizar o metodo npm start e ja estara rodando o nodemon
+
+Middlewares
+- Middlewares são códigos que podem ser executados no meio/entre (middle) de alguma ação e outra;
+- Por exemplo: verificar se usuário está logado, podemos ter um para esta verificação;
+- O método que nos dá acesso a utilizar middlwares é o use no Express;
+- Para utilizar middleware, recebemos 3 parametros na funcao, uma requiscao, uma resposta e o next, o next e para permitir ir para aquela acao no qual o middleware foi invocado, para ambos os caso, caso req com repsosta positiva ou nao
+
+Parâmetros por URL
+- Podemos resgatar os parâmetros da URL por meio do req;
+- Acessamos req.params.<nome>;
+- Onde nome deve ser o que está definido na URL do Express;
+- Que fica desta forma: /users/:id
+- Neste caso estaríamos buscando o usuário no banco de dados pelo id;
+- E o parâmetro vem pela URL;
+- Criacao de outras rotas devem ficar em cima da rota principal, para fins de que nao cair sempre na /, visto que todas as todas possuem
+
+Enviando dados por POST
+- Para enviar os dados vamos precisar criar um form e mandar os dados via POST para alguma URL;
+- No Express precisamos colocar alguns middlewares como o express.json para ler os dados do body;
+- E também uma roda que vai receber estes dados, utilizando o método post do Express;
+- Como estamos usando uma app monolito, devemos ter uma rota get tambem que vai mostrar o arquivo do form
+- Ao criar o form, devemos especificar qual a rota no action e o method
+- Deve-se colcoar as rotas acima de outra rota, pois se nao pode causar confusao nas rotas
+- Para pegar o conteudo do body, devemos utilizar um middleware chamado express.urlencode
+- Alem do middleware citado acima, devemos utilizar mais o express.json para ser convertido em um objeto json
+- Podemos extrair informacoes das requisoces feitas pelo usuario que foram trazidas pelo body, utilizando os seguintes comandos req.body.nome_atributo
+
+Módulo de rotas
+- Podemos unir várias rotas em um módulo, isso vai deixar nosso código mais organizado;
+- Normalmente criamos uma pasta ou arquivo que contém estas rotas;
+- Que representam uma entidade em comum, como users;
+- Vamos utilizar um novo objeto chamado Router, e colocar as rotas nele;
+- Depois precisamos exportá-lo e importar no arquivo principal;
+- Bem util quando temos diversas rotas
+- Ao dividir as rotas, devemos deixar no index principal, os comandos para ir para pagina principal, comandos para pegar os dados do body da requisicao, caminhos, podem ser mantidos no arquivo principal
+- E as rotas ficam em outros arquivos e renomeamos onde tinha app por router, e exportar as rotas atraves do modules.exports = router
+- Depois devemos criar uma variavel que ira chamar essas rotas para gente no programa principal, onde instanciamos a variavel da seguinte maneira const nome_varRoutes = require('./nome_pasta_rotas/), e com isso, apos a rota da pagina principal /, devemos utilizar um middleare app.use('/nome_pasta_rotas', nome_varRoutes) 
+- Feito isso, como ja instanciamos um pedaco do nome da rota, devemos tirar o nome da rota na pagina de rota e deixar apenas o /nome_rota
+
+Colocando CSS
+- Para inserir CSS nas páginas e arquivos estáticos vamos precisar de um middleware;
+- Que é o express.static;
+- Precisamos colocar um diretório base, que normalmente é o public;
+- E criar os estáticos a partir desta pasta, com o seguinte comando express.static('nome_pasta');
+- No HTML podemos acessar o caminho relativo após a pasta definida, e pronto!
+
+OBS1: Middlere vai ser muito usado
+
+Criando uma página 404
+- Para criar uma página 404, ou seja, quando o usuário acessa uma página que não existe;
+- Basta criar um novo middleware abaixo de todas as rotas, que responde com este status;
+- E enviar um arquivo de template referente a este página;
+
+Tarefa 03
+1. Crie um novo projeto com Express;
+2. Adicione nodemon e coloque um script chamado serve para rodar o projeto na porta 5000;
+3. Crie duas páginas da sua escolha;
+4. Adicione CSS as páginas, mude a cor de fundo e a cor da fonte, pelo menos;
+5. Separe as rotas no recurso de Router do Express;
+
+A resolucao da tarefa 03 estara contido na pasta exercicios/exercicio_proposto/tarefa_03
+
+Nessa secao, aprendemos a instalar e executar laguns middlawares importantes da framework express, mas isso sao funcamentos basicos, a partir da proxima secao iremos aprofundar no teamplante engine.
