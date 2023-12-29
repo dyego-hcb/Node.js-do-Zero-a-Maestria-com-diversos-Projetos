@@ -1,0 +1,15 @@
+body{
+    background-color: #FEFEFE;
+    text-align: center;
+    padding-top: 5em;
+}
+
+h1
+{
+    color: darkmagenta;
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}

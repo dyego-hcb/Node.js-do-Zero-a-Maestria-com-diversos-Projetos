@@ -1,0 +1,15 @@
+<div>
+  <h1>Ola {{name}}, seja bem vindo</h1>
+{{#if auth}}
+  <p>Voce esta autenticado</p>
+{{else}}
+  <p>Voce nao esta autenticado</p>
+{{/if}}
+<h3>Alguns produtos:</h3>
+<ul>
+  {{#each products}}
+    <li>ID: {{this.id}}, Name: {{this.title}}, Price: {{this.price}}</li>
+  {{/each}}
+</ul>
+<p> <a href="/products">Clique aqui</a> para ir para a pagina de produtos</p>
+</div>

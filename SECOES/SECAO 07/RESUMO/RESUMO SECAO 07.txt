@@ -1,0 +1,95 @@
+-- Resumo Secao 07: Template Engine com Express - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 07: Template Engine com Express - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos entender o que e uma template engine, e explorar seus recursos, ha diversas templates disponiveis no mercado, porem nesse curso iremos utilizar a handle bars, pois ela preza a delegacao de reposabilidades, por exemplo acoes do usuario, acoes do gerente, etcs.
+
+O que é Template Engine -> e um motor de templates(html), adicionando mais recursos na view, onde podemos receber dados e injetar na view.
+- Uma forma de deixar o HTML dinâmico, inserindo variáveis do back-end no front-end;
+- Podemos também criar layouts, que são reaproveitados;
+- É essencial para projetos usam banco de dados, que não são estáticos;
+- Temos diversos disponíveis: EJS, Pug e Handlebars, por exemplo;
+- Todos atingem o mesmo objetivo, porém há algumas diferenças de setup e funcionalidades;
+
+Conhecendo o Handlebars
+- O Handlebars é uma das template engines mais utilizadas, pois possui menos logica na view, deixando melavel a mudancas no html;
+- Colocamos os dados dinâmicos no HTML entre {{ }} para serem impressos, podemos interpolar variaveis, como por exemplo uma variavel nome, que pode ser impressa na view, deixando dinamica;
+- Podemos criar condicionais e também loops no template;
+- Conhecido pela sua sintaxe limpa no front, nos força a não executar lógica no HTML;
+- O nome do pacote é express-handlebars, podemos ter o handlebars adaptados para outras linguaguens;
+- Sempre que tiver {{ }} e uma utilizacao do handlebars
+
+Instalando o Handlebars
+- Vamos precisar instalar o Express e o Handlebars, para o correto funcionamento;
+- Podemos também utilizar o Nodemon, para nos ajudar;
+- No index precisamos importar os pacotes instalados;
+- E também adicionar ao Express a engine do Handlebars, fazendo um papel do middleware, atraves do seguintes scripts:
+app.engine('handlebars', exphbs.engine());
+app.set('view engine', 'handlebars');
+- Criaremos uma view no diretório views, com a extensão handlebars;
+- Utilizamos o método render para enviar esta view para a requisição;
+- No render, passamos o nome do arquivo .handlebars que sera renderizado, o mesmo aceita codigos html
+
+Criando layouts
+- Podemos criar layouts para reaproveitar código entre páginas, como navbar, footer, etc.;
+- Vamos criar uma pasta chamada layouts em views;
+- E nela criamos o template que será repetido;
+- Colocamos uma tag especial {{{ body }}};
+- Para que neste local o ‘corpo’ do site seja inserido;
+- Em todas as nossas views agora o layout é repetido;
+
+Passando dados para a view
+- Vamos passar os dados por meio do método render;
+- Enviamos um objeto com chaves e valores;
+- E isso nos possibilita acessar estes dados no template;
+- Vamos utilizar a sintaxe de {{ dado }};
+- E o dado será impresso!
+- Quando e variavel e {{ }}, o nome que define no back e utilizado no front
+
+Utilizando condicionais 
+- Utilizar uma estrutura condicional nos permite mais flexibilidade no layout;
+- Podemos utilizar o if no Handlebars;
+- A sintaxe é {{#if algumacoisa }} … {{/if }}
+- Só imprime o que está entre as condicionais, se o resultado dela for verdadeiro;
+- Precisamos encaminhar o dado a ser validado pelo backend;
+
+Utilizando o else
+- O else é um complemento do if;
+- Utilizamos no Handlebars para a exibição de outra parte do layout, caso a condição seja falsa;
+- Isso nos dá mais flexibilidade ainda!
+- A sintaxe é: {{#if alguma coisa}} … {{else }} … {{#/if }}
+
+Estrutura de repetição
+- As estruturas de repetição no Handlebars são feitas pelo operador each;
+- A sintaxe é {{#each }} … {{/each }}
+- Em um array podemos chamar os itens com: {{this }}
+- Então cada um dos itens é acessado na view;
+- Como o Handlebars prega um template mais limpo, devemos mandar apenas, a logica de separacao deve ser feita no back-end, o necessário para o front-end;
+
+Utilizando o with
+- O with nos permite abstrair um objeto, tornar a estrutura mais simples;
+- Ou seja, podemos acessar as propriedades sem nos referenciarmos sempre ao objeto antes;
+- A sintaxe é: {{#with objeto}} … {{/with}}
+- Desta maneira nossa código fica ainda mais simples;
+
+Conhecendo os partials
+- Os partials são como mini templates, que precisam ser repetidos em diversos locais da nossa aplicação;
+- Precisamos realizar algumas modificações na implementação do Handlebars;
+- Os partials geralmente ficam em views/partials;
+- E utilizamos a sintaxe: {{> partial}} para chamá-lo no projeto;
+
+CSS com Handlebars e Express
+- A inclusão de CSS no Handlebars é muito semelhante a que realizamos apenas com Express;
+- Precisamos definir a pasta dos arquivos estáticos;
+- E vamos linkar o CSS com o nosso layout em comum para todas as páginas;
+- Isso torna possível a estilizar os nossos projetos;
+
+Tarefa 04
+1. Crie um projeto com Express, Handlebars e Nodemon;
+2. Crie também uma rota para uma home, que exibe alguns produtos de um
+array de objetos;
+3. Utilize o recurso de layout do Handlebars para a base do HTML;
+4. Adicione CSS e modifique alguns estilos a sua escolha;
+5. Os produtos precisam ter um link, que exibe as páginas individuais de cada um, dica: URL dinâmica do Express, aproveite o array da home;
+
+Essa secao serviu para entendermos todos os recursos que uma template engine possui, para facilitar a vida do programador para enviar informacoes do back-end para o front-end, aprendendo uma template enginte, conseguimos utilizar as outras do mercado.
