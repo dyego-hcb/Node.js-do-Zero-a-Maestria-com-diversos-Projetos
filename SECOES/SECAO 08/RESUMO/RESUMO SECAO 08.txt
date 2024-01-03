@@ -1,0 +1,101 @@
+-- Resumo Secao 08: Integracao de Node.js com MySQL - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 08: Template Engine com Express - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos aprender a como integrar o node.js com MySQL um banco de dados relacional.
+
+O que são bancos relacionais?
+- Os bancos de dados relacionais são constituídos por algumas entidades;
+- Banco de dados: Um banco para guardar os dados do projeto;
+- Tabelas: Onde categorizamos os dados e os inserimos;
+- Colunas: Onde separamos os dados em uma tabela;
+- Dados: O que é inserido, modificado, atualizado e removido em uma tabela;
+- Relacionamentos: Ligações entre as tabelas;
+
+O que é MySQL?
+- O MySQL é um SGBD (Sistema Gerenciador de Banco de Dados);
+- Que vai nos ajudar a trabalhar com bancos relacionais;
+- Também é o mais utilizado atualmente em sistemas e aplicações;
+- Muitos projetos de Node.js utilizam MySQL;
+- Precisamos instalar o software e deixar ele em execução para que o Node possa se conectar aos bancos que temos disponíveis;
+
+Instalacao MySQL:
+- Para instalar o mysql, precisamos ir no site oficial do mysql e baixar o mysql e o mysqlworkbranch
+- Apos feito isso, devemos baixar o XAMPP tambem para inicializar os servidores MySQL
+- O MySQL pode ser executado no terminal, basta utilizar o comando mysql -u nome_user , para iss deve-se configuras as variaveis de ambiente !!
+- Utiliza a flag -p se tiver senha, a frente do nome do usuer
+- O mysql pode ser instalado via cmd pala sistemas operacinais unix
+
+Intsalacao HeidiSQL
+- Caso a instalacao da Workbench nao seja possivel, uma outra opcao e a HeidiSQL que e uma ferramenta que tambem permite visualizacao de dados
+- Funciona para a maioria dos SGBDS's relacionais
+- Se instala da seguinte maneira, bata ir no site oficial do heidisql
+
+Integração do MySQL e Node.js
+- Primeiramente vamos precisar instalar o driver, que é um pacote npm chamado mysql;
+- Vamos instalá-lo com o npm!
+- Depois precisamos conectar ao nosso banco de dados, atraves dos seguintes comandos
+const nome_conection = mysql.createConnection(paremetors)
+- Vamos inserir informações como: host, user, password e o banco;
+- Para estabelecer uma conexao, devemos utilizar o metodo connection e verificar se deu erro ou nao, caso tiver dado erro motrar ao user, caso nao mostrar uma msg de conexao feita com sucesso e utilizar o metodo listenen para ativar o servidor em uma determinada porta
+
+Criando a nossa tabela
+- Para manipular os dados do sistema vamos precisar criar uma tabela;
+- Faremos isso via Workbench, criando uma tabela chamada books, a Workbench, mostra o codigo sql;
+- Onde vamos cadastrar livros;
+- Estes livros vão precisar de duas informações: título e número de páginas;
+
+Inserindo dados
+- Para inserir dados no banco vamos precisar criar e executar uma query;
+- A query em si é uma string, seguindo os padrões do MySQL;
+- Já para executar vamos utilizar o método query do pacote mysql;
+- E nesta aula faremos o uso da instrução INSERT, que insere dados;
+- Para a formual do insernt, em nodejs utilizamos a segunite sintaxe:
+const nom_query = `INSERT INTO nome_table (atributos_table) VALUES ('${var_com_dados}')`
+- Apos feito isso, para executar a querry, utilizamos a funcao query(nome_query, function(err) { conteudo})
+
+Resgatando os dados
+- Para resgatar dados vamos precisar criar uma query, que será um SELECT;
+- Podemos escolher quais dados são retornados, determinando as colunas;
+- E podemos imprimi-los nas nossas views;
+
+Resgatando os dados específicos
+- Para resgatar um dado específico vamos precisar utilizar o WHERE;
+- Desta maneira conseguimos filtrar por uma coluna e um valor;
+- Poderemos então achar os livros pelos seus ids;
+
+Editar dados primeiro passo
+- Para editar algum dado temos antes alguns preparos a realizar;
+- Primeiramente vamos resgatar o dado, como na aula anterior;
+- E normalmente preenchemos o formulário de dados com os dados que foram resgatados (SELECT), atraves do atributo value para definir um valor para um campo;
+- Isso faz com que o usuário lembre dos dados cadastrados e possa escolher o que editar;
+
+Finalizando a edição
+- Para concluir esta etapa precisamos criar uma nova rota como POST;
+- Isso porque o navegador só consegue interpretar dois verbos atualmente (GET ou POST);
+- E então faremos uma query de UPDATE para processar a atualização;
+- Note que precisamos passar o id do livro neste formulário também;
+- Podemos passar um atributo escondido no metodo post atraves do input hidden, onde definimos o valor desse input com uma info que nao deve ser mostrada para o usuario, como id de algum dado do bd, essa info nao e necessaria ser mostrada para o cliente por exemplo
+OBS1: Para variaveis que vao ter seu valor inseridas no bd devemos usar '${nome_var}' aspas simples, e para variavels cujo valor sera usado para verificar algo nao e necessario
+
+Remover itens
+- Para remover um item vamos utilizar a query DELETE;
+- Precisamos enviar para a rota um POST com o id do item a ser removido;
+- Este processo podemos fazer em uma única etapa;
+OBS1: JAMAIS DAR UM DELETE SEM WHERE POIS DELETA TODOS OS DADOS DAQUELA TABELA
+
+Connection Pool
+- Connection Pool é um recurso para otimizar as conexões, criando um cache e permitindo sua reutilização;
+- O driver mysql tem este recurso desenvolvido, podemos aplicá-lo;
+- Este recurso também controla as conexões abertas, fechando assim que se tornam inativas;
+- Para isso, devemos criar uma pasta db e dentro denta cria um arquivo chamado conn.js
+- Nesse arquivo iremos colocar os dados da conexao com o bd
+- Nele podemos utlizar o metodo createPool onde definimos o numero de conexoes permitidas
+- Com isso, podemos exporta ess modulo para o promgram principal, onde podemos apagar nosso script de conexao, e basta trocar os conn no programa principal
+
+Preparando a query
+- Uma forma de nos defendermos de SQL Injection;
+- Podemos utilizar interrogações em vez dos valores, ?? para colunas e ? para as variaveis;
+- E substituir através de um segundo passo, para a query ser executada corretamente, criando um array chamado data com os nomes dos atributos e variavies na ordem dos ?
+- Esta técnica deve ser utilizada em qualquer programa que vá para a produção;
+- E bom fazer isso par todos os campos em que passamos variaveis
