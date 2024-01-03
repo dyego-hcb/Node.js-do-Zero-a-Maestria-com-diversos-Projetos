@@ -36,3 +36,44 @@ Nesta seção, abordaremos a integração eficiente do Node.js com o MySQL, perm
 
 7. **Prevenção de SQL Injection:**
    - Técnicas seguras para preparar consultas SQL e evitar vulnerabilidades, como a Injeção de SQL.
+
+***
+
+# Node.js Course from Zero to Mastery
+
+## Section 08: Node.js Integration with MySQL
+
+Welcome to Section 08 of the "Node.js from Zero to Mastery with Various Projects" course. In this section, we will explore how to integrate Node.js with MySQL, a relational database. We will delve into the fundamental concepts of relational databases, with a special focus on MySQL, and learn how to use Node.js to connect, query, and manipulate data in a relational database environment.
+
+### Repository Structure
+
+- **Section Summary:**
+  - Refer to the [Summary](./RESUMO/) folder for a detailed overview of the topics covered in this section.
+
+- **Practical Examples:**
+  - Find practical examples in the [Video Exercise](./EXERCICIOS/EXERCICIO%20VIDEO%20AULA/) folder.
+
+### Overview
+
+In this section, we will cover the efficient integration of Node.js with MySQL, allowing you to understand the following topics:
+
+1. **Understanding Relational Databases:**
+   - Exploration of essential elements of relational databases, including entities, tables, columns, data, and relationships.
+
+2. **MySQL - Database Management System:**
+   - A detailed view of MySQL as a Relational Database Management System (RDBMS) and its significance in Node.js projects.
+
+3. **Installation and Configuration of MySQL:**
+   - Practical steps to install and configure MySQL, including the use of MySQL Workbench and XAMPP to facilitate local development.
+
+4. **Integration of MySQL and Node.js:**
+   - Step-by-step guide for installing the MySQL driver via npm and establishing the connection between Node.js and MySQL.
+
+5. **Data Manipulation:**
+   - Detailed instructions on creating tables, inserting data, retrieving information, and performing editing and deletion operations.
+
+6. **Using Connection Pool:**
+   - Efficient implementation of Connection Pool to optimize connections, ensuring better performance and resource reuse.
+
+7. **Preventing SQL Injection:**
+   - Secure techniques for preparing SQL queries and avoiding vulnerabilities, such as SQL injection.
