@@ -1,6 +1,6 @@
 -- Resumo Secao 08: Integracao de Node.js com MySQL - Curso Node.js do Zero a Maestria com diversos Projetos --
 
-Este e o Resumo Secao 08: Template Engine com Express - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+Este e o Resumo Secao 08: Integracao de Node.js com MySQL - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
 
 Nessa secao iremos aprender a como integrar o node.js com MySQL um banco de dados relacional.
 
