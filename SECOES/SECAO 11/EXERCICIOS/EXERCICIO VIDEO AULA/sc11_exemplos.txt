@@ -1,0 +1,5 @@
+Nessa secao iremos criar um projeto chamado Toughts que sera basicamente como se fosse uma rede social, onde podemos publicar pensamentos e esses pensamentos poderam ser vistos e pesquisados por outras pessoas, teramos a parte de autenticacao dos usuarios (login e registro), onde apos autenticado, o usuario tem acesso a uma dashboard, onde na mesma o mesmo pode ver os pensamentos de sua autoria, pode cadastrar novos pensamentos, editar e excluir os mesmos.
+
+O projeto estara contindo no seguinte repositorio do github, disponivel no link abaixo:
+
+https://github.com/dyego-hcb/projeto_toughts_nodejs

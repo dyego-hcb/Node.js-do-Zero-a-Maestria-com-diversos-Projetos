@@ -1,0 +1,49 @@
+-- Resumo Secao 11: Projeto 2: Toughts (Express, Sequelize e MVC) - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 11: Projeto 2: Toughts (Express, Sequelize e MVC) - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos criar um projeto chamado Toughts que sera basicamente como se fosse uma rede social, onde podemos publicar pensamentos e esses pensamentos poderam ser vistos e pesquisados por outras pessoas, teramos a parte de autenticacao dos usuarios (login e registro), onde apos autenticado, o usuario tem acesso a uma dashboard, onde na mesma o mesmo pode ver os pensamentos de sua autoria, pode cadastrar novos pensamentos, editar e excluir os mesmos.
+
+O projeto estara contindo no seguinte repositorio do github, disponivel no link abaixo:
+
+https://github.com/dyego-hcb/projeto_toughts_nodejs
+
+link
+
+Abaixo, iremos listar o passo a passo para o desenvolvimento desse projeto, juntamente com algumas anotacoes que acharmos importante.
+
+Passo 1 -> Setup inicial do projeto -> Nessa etapa, iremos iniciliar o projeto com o npm init, e instalando as dependecias que iremos utilizar, como o express, express-handlebars, msql2, sequielize, nodemon, bcryptjs(para criptografia e descrpitografa de senhas, visto que estamos mechendo com login), connecti-flash(para flash msg), cookieparse , cookiesession (para manter conexao e o sistema verificarque que que esta logado), express-flahs(para as flash msg), express-session(para tratarmos as secoes), session-file-store(para salvar as sesoes em arquivos), apos instalar as dependencias, iremos criar o arquivo index.js, apos feito isso, iremos crias as pastas que estao presentes na esrtutracao de projetos MVC, como as pastas models, views, controllers, routes, db, public, sessions
+Passo 2 -> Iniciando a estrutura do projeto -> Nessa etapa, iremos iniciar a estrutura do projeto, onde iremos configurar para o nodejs ja rodar no navegador e conectar com o bd
+Passo 3 -> Finalizando a estrutura do proejto -> Nessa etapa, finalizaremos a estrutura do projeto, onde estaremos concluindo a finlizacao da configuracao dos outros middlewares que iremos utilizar no projeto
+Passo 4 -> Criacao dos models -> Nessa etapa, iremos crias os models que sao as entidades no nosos bd que fazem parte da ideia de negocio do projeto, no nosso caso User e Tought. 
+OBS1: Nome_Entidade.belongsTo(Nome_Entidade);
+Nome_Entidade.hasMany(Nome_Entidade);
+Relacao 1 para 1 
+Relacao 0 ou N para 1
+Coloca o relacionamento nas tabelas
+Passo 5 -> Criando a pagina home do projeto -> Nessa etapa, iremos cria e visualiar a pagina home do nosso projeto
+Passo 6 -> Adiconando css na pagina -> Nessa etapa iremos comeca a estilizar nosso projeto, com adicao de configuracoes no arquivo css
+Passo 7 -> Iniciando autenticaco -> Nessa etapa, iremos iniciar o desenvolvimento da funcionalidade de autenticar usuarios, iremos desenvolver Rotas e Controllers diferentes para autenticacao, visando boas praticas.
+Passo 8 -> Criando formulario de registro de usuraio -> Nessa etapa, iremos desenvolver a tela de registro de usuario
+Passo 9 -> Finalizando pagina de registro -> Nessa etapa, iremos adiconar o css na pagina de registro
+Passo 10 -> Implementando flash messages -> Nessa etapa, iremos fazer com que seja feita algumas verificacoes antes do cadastro, caso haja informacoes erradas, mostrar uma msg para o usuario utilizando as flash msg
+Passo 11 -> Registrando usuarios no sistmas -> Nessa etapa, iremos registrar os usuarios no bd, e ja fazer com que os mesmo ja saim logados no site
+Passo 12 -> Funcao de logout -> Nessa etapa, iremos implementar a funcao de logout do usuario
+Passo 13 -> Criando formulario de login -> Nessa etapa, iremos cria o formulario de login do usuario
+Passo 14 -> Finalizando a autenticacao -> Nessa etapa, vamos de fato autenticar um usuario via login
+Passo 15 -> Middlewares de verificacao de autenticacao -> Nessa etapa iermos desenvolver a tela de dashboard, para verificacao de autenticacao, para que essa tela so possa ser acessada por usuarios autenticados
+OBS1: Para isso, precisamos de alguns ajudantes, ciramos uma pasta chamada helpers, e dentro delas, vamos implementar um middlewares que ira fazer essa verificaocao pra gente, se o usuario esta logado ou nao e poder redirecionar o mesmo para uma determinada pagina
+Passo 16 -> Formulario de criacao de pensamento -> Nessa etapa, iremos criar o form de criar pensamentos
+Passo 17 -> Inserindo pensamentos no banco de dados -> Nessa etapa, iremos inserir os pensamentos que foram cadastrados no form anterio no bd
+OBS1: Ao dar redirect com sesao, devemos garantir que a mesma continue salva.
+Passo 18 -> Resgatando pensamento para o dashboard -> Nessa etapa, iremos resgatar pensamentos do db e mostrar na dashboar os pensamentos daquele user em especifico atraves da seguinte sintaxe findOne({where: {nome_var_coluna: nome_var_program}, include: Nome_Tabela, plain: true}); o plain retorna apenas os dados mais interesantes, porem ainde temos que faze uma limpa, utlizando o map((result) => result.dataValues) pegando o que esta apenas em data values
+Passo 19 -> CSS do dashboard -> Nessa etapa iremos estilizar a dashboard
+Passo 20 -> Removendo pensamentos -> Nessa etapa iremos implementar a funcionalidade de remocao de pensamentos
+Passo 21 -> Mensagem para a dashboard vazia -> Nessa etapa iremos imeplementar uma funcionalidade, onde caso o usuario nao possua pensamentos, uma msg falando para o mesmo criar novos pensamentos
+Passo 22 -> Preenchendo form de edicao com dados dos Pensamentos -> Nessa etapa, iremos inicializar a view de edicao com os dados daquele determinado pensamento ja preenchido nos campos
+Passo 23 -> Atualizacao do Pensamento -> Nessa etapa iremos realizar a acao de atuzaliar os dados do bd atraves da interface
+Passo 24 -> Resgatando dados para a home -> Nessa etapa iremos buscar os dados de todos os pensamentos do bd e mostrar na main do nosso projeto
+Passo 25 -> Avancado o HTML da home -> Nessa etapa, iremos melhorar um pouco mais a home, como adicionar outras funcionalidades, como barra de pesquisa, etc.
+Passo 26 -> Finalizando CSS da home -> Nessa etapa iremos melhorar a estilizacao da pagina main
+Passo 27 -> Criando funcionalidade de busca -> Nessa etapa iremos implementar a funcionalidade de busca via um filtro de busca na view home, para isso temos 2 tipos de operadoes de busca o operador fullsearch que busca exatamente aquilo e a busca por like, que e qualquer objeto que contem aquilo, utilizamos o modulo de operador
+Passo 28 -> Criando funcionaldade de ordenacao na home -> Nessa etapa iremos implementar a funcionalidade de ordenacao da visualizacao dos itens 
