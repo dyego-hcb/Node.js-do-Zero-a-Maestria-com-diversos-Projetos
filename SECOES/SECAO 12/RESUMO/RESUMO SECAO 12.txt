@@ -1,0 +1,96 @@
+-- Resumo Secao 12: Node.js com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 12: Node.js com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos aprender a integra o node.js com o MongoDB, que e um bd nao relacional.
+
+O que é NoSQL?
+- São bancos de dados focados em documentos (documents), com colunas e linhas como semelhante a arquivos exel;
+- A modelagem de dados com relacionamentos é opcional, diferente do relacionais, onde devemos marca o relacionamento com chave estrangeiras, referenciando a um atributo de uma determinada tabela, etc.
+- Não utilizamos queries e sim métodos de classes para trabalhar com os dados, semelhante a orientacao a objetos;
+- As tabelas não existem, temos as collections;
+- Não precisamos definir a estrutura da collection previamente;
+- MongoDB é um banco NoSQL;
+
+O que é MongoDB?
+- Um banco de dados orientado a documento;
+- Os dados ficam salvos em estruturas parecidas com JSON, mais especificamente em BSON, porem ele tem alguma pates diferentes do JSON porem parecem muito, como por serem isolados por chave, nome do dado e valor, separador 2 pontos;
+- Frequentemente utilizado com Node.js;
+- Diferente do SQL temos índices primários e secundários;
+- Utilizaremos um driver para conectar a nossa aplicação com o MongoDB, semelhante ao MySQL e Sequelize;
+
+Instalacao MongoDB Windows:
+- Para instalar o MongoDB no window,s precisamos de 2 ferramentas:
+- MongoDB (community server) que e o sistema do banco de dados
+- MongoDB tools, ferramenta para importacao e exportacao de bancos
+- Ambas podem ser encontradas no site oficial
+- Deve-se instalar o cmder pois ele deixa o terminal do windows semelhante ao do linux, visto que a maioria dos servidores sao linux, entao deve-se utilizar comandos linux, porem podem usar o cmd do windows porem alguns comandos podem ser diferentes
+- No windows e necessario configurar as variaveis de ambiente
+
+Instalacao MongoDB Linux:
+- Basta seguir o passo a passo da documentacao de instalacao do site oficial do MongoDB
+
+Principais entidades:
+- Database: e onde ficam as nossas collections e dados;
+- Collections: sao como as tabelas nos bancos relacionais, nelas vamos inserir os dados
+- Documents: sao os dados no MongoDB tem esta nomenclatura
+- Collections podem ser criadas livremente a qualquer momento e nao possuem colunas fixas para os dados 
+
+MongoDB e JSON
+- O tipo de dado inserido na tabela e o BSON, uma variacao de JSON
+- O BSON e semelhante ao JSON, porem com recursos a mais
+- A forma de criar um BSON e igual ao JSON, note abaixo:
+{ -> inicio
+    propriedate <- nome: "Dyego" -> valor, -> separacao dos dados por ,
+    idade: 23
+} -> fim
+
+Primeiro mergulho
+- Nossa missao sera criar um banco de dados, atraves do comando use nome_bd, porem o mongo so cria o bd quando tem dados no mesmo
+- Cria uma collection, atraves do comando db.nome_collection
+- Inserir um dado e resgatar este medo dado por meio de um find, atraves do comando db.nome_collection.insertOne({ parametros }) para inserir e db.nome_collection.findOne({ parametros })
+- Isso tudo via cmd
+
+Conectando ao MongoDB
+- Primeiramente vamos precisar instalar o driver do MongoDB, que é mongodb (um pacote de npm);
+- Depois criaremos a conexão, baseada em uma URL com o protocolo mongodb://
+- Através da classe MongoClient
+
+Criando MVC
+- Antes de trabalhar com MongoDB vamos criar uma estrutura MVC;
+- Isso vai fortalecer nossos conhecimentos com a arquitetura;
+- E também poderemos comparar o trabalho com SQL x NoSQL;
+OBS1: Para padroes MVC e bom comecar fazendo as rotas primeiro e depois ir alterando no controller e depois no model se necessario
+
+Inserindo dados
+- Primeiramente vamos criar um Model, onde este será uma classe de JavaScript, para seguir o MVC;
+- Depois utilizaremos o Model para criar o método save, que executa o insertOne de MongoDB;
+- Por fim é necessário criar o formulário que interage com a rota do sistema;
+
+Resgatando dados
+- Para resgatar os dados de uma collection vamos utilizar o método find de MongoDB;
+- Os dados vem em um cursor, para converter em array utilizamos toArray;
+- Depois é só passar os dados para o controller e exibir na view;
+
+Resgatando um dado
+- Para resgatar um dado vamos utilizar o método findOne;
+- Onde podemos filtrar por um campo, que no nosso caso vai ser o _id, para isso devemos utilizar um modulo do db chamado ObjectId para converter o id no qual estamos buscando para os padroes do id do mongo;
+- Vamos enviar o dado para o Controller e depois para a View;
+
+Excluindo dados
+- Para remover um dado do banco, vamos utilizar o método deleteOne;
+- Que recebe um filtro como no de resgatar dados, utilizaremos o campo _id;
+- Basta executar o método no Controller e redirecionar após a remoção;
+
+Editar dado - formulário
+- Para editar um dado, primeiramente vamos criar uma view que mostra o formulário preenchido;
+- A ideia é parecida com a de getProduct do nosso projeto;
+- Vamos utilizar o atributo value do input para preencher o campo com o valor salvo;
+
+Editar dado - salvando
+- Para salvar um dado editado será necessário criar um método no Model;
+- Que utiliza o método updateOne do MongoDB;
+- Onde passamos o id e também os dados para atualizar;
+- Criaremos também uma função no Controller e a rota;
+- Metodos sem static precisam do objeto instanciado para poder ser chamado
+- Operador $ e utilizado no mongodb para utilizar operadores do mongo db
