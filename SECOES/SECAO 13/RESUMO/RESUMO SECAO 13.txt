@@ -1,0 +1,62 @@
+-- Resumo Secao 13: Adaptando Mongoose ao nosso projeto - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 13: Adaptando Mongoose ao nosso projeto - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao, iremos aprender a trabalhar com moongose que e uma ODM para o MongoDB, e similar ao sequelize
+
+O que é ODM?
+- Um acrônimo para Object Data Mapping, ou seja, mapeamento de dados por objetos;
+- Em MongoDB utilizamos ODMs para deixar mais ágil o processo de trabalho com os dados;
+- Basicamente um Model ficará responsável pelas interação com um BD;
+- A ODM mais utilizada para MongoDB é a Mongoose;
+- ORM e ODM tem funções e utilizações muito semelhantes;
+- Em outras palavras, um facilitador
+
+O que é Mongoose?
+- Mongoose é a ODM mais utilizada para MongoDB;
+- Onde declaramos um Model, que faz as interação com a collection que ele corresponde;
+- Definimos nesse Model os dados e seus tipos, como estamos esperando que a collection fique;
+- Isso se assemelha ao SQL, e ajuda na organização/manutenção;
+- Como nas ORMs temos métodos prontos para a interação com o DB;
+
+Instalando o Mongoose
+- Nesta sessão vamos adaptar o projeto de MongoDb para utilizar o Mongoose;
+- O primeiro passo é instalar o pacote e fazer a conexão com o banco;
+- O nome do pacote é mongoose;
+- Vamos precisar fazer algumas alterações no nosso arquivo conn.js, que é a ponte entre nossa aplicação e o DB;
+
+Criando o Schema
+- Agora vamos criar uma parte muito importante das aplicações que tem o Mongoose: o Schema;
+- Que é um esqueleto do nosso elemento a ser inserido na collection;
+- Vamos criá-lo no Model da aplicação;
+- Podemos definir o tipo daquele atributo e algumas outras restricoes
+
+Inserindo dados
+- Para inserir dados vamos utilizar o método save de Mongoose;
+- Este método é da própria biblioteca, ou seja, não vamos utilizar o do nosso Model, que usamos no MongoDB;
+- O restante fica bem parecido, passamos os dados a serem inseridos em um objeto para save;
+
+Resgatando dados
+- Para resgatar os dados vamos utilizar o método find do Mongoose;
+- É necessário o método lean também para formatar os dados, de forma que o Handlebars consiga utilizar;
+- Apenas com estas alterações já estamos prontos;
+
+Resgatando dado individual
+- Para encontrar um único item vamos utilizar o método findById;
+- Neste caso não precisamos converter o id para o padrão do MongoDB, o Mongoose faz isso para nós;
+- E também utilizaremos o lean novamente;
+
+Edição de dado - form
+- Para preencher o formulário de edição vamos utilizar novamente o findById;
+- O método lean nos ajuda a receber os dados para o Handlebars;
+- E pronto, nosso código já se adapta aos outros processos;
+
+Edição de dado - post
+- Obs: para resolver um warning vamos colocar as rotas em /products;
+- Depois basta utiliza o método updateOne, onde passamos um filtro para atingir o registro correto;
+- E também um objeto com os dados de atualização;
+
+Removendo dado
+- Para remover um dado utilizaremos o método deleteOne;
+- Que leva simplesmente o filtro como argumento, neste caso utilizaremos o _id;
+- Depois basta redirecionar o usuário;
