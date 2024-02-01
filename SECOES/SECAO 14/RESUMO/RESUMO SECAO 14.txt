@@ -1,0 +1,79 @@
+-- Resumo Secao 14: Introducao a API's - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 14: Introducao a API's - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos aprender os detalhes para criar uma api.
+
+O que é uma API?
+- API é um acrônimo para Interface de Programação de Aplicações (Application Programming Interface);
+- Uma forma simples de comunicação entre aplicações;
+- Não necessita de telas, respostas geralmente são em JSON;
+- Independente do front-end, a API não possui ligação com o front;
+- Baseadas em requisição e resposta;
+- Podemos criar uma API com Express
+
+O que é REST e RESTful?
+- REST significa Representational State Transfer ou Transferência Representacional de Estado;
+- Um estilo de arquitetura, que define como as APIs devem ser criadas;
+- Seguindo todos os padrões a API é considerada RESTful;
+- Alguns dos pontos são: respostas uniformes, sem ligação de estado, cache de respostas e outros;
+- Podemos encontrar esses padroes, no site da ibm, basta pesquisra rest principles no google e acessa o link da ibm
+
+O que é uma SPA?
+- SPA significa Single Page Application;
+- É quando a aplicação possui um front-end separado do back-end;
+- Ou seja, uma API para o back-end;
+- E um framework front-end JS, como: React, Vue ou Angular;
+- Aplicações deste tipo estão dominando o mercado;
+- E as sessões seguintes tem como objetivo trabalhar focadas em SPA;
+- A arquitetura anteriormente utilizada é conhecida como Monolith, onde temos as 3 estrutras em uma so, front back end e o bd em apenas uma estrutura;
+
+Verbos HTTP
+- Os verbos HTTP andam de mãos dadas com as APIs, e fazem parte do REST;
+- Temos métodos como: GET, POST, PUT, DELETE, PATCH e etc;
+- Cada um representa uma ação na API, ou seja, são essenciais;
+- É muito importante que as nossas funcionalidades usem os métodos corretos;
+- Enviamos o método através da requisição;
+
+Criando uma API com Express
+- Para criar a API teremos uma tarefa bem simples, comparada a estrutura com Handlebars;
+- Basta instalar o Express, ele fará tudo sozinho neste ponto;
+- Depois criaremos uma rota que responde em JSON, este é o dado de comunicação entre aplicação e API;
+- É importante definir o verbo correto, como GET ou POST, por ex;
+
+Conhecendo o Postman
+- O Postman é um client para testes de API, nao so para teste, conseguimos testar testes automatizados, testes de ambientes, etc;
+- Podemos então criar o back-end antes ou separado do front só com a ajuda deste software;
+- Como você deve imaginar, é fundamental quando estamos criando APIs;
+- Podemos simular verbos, corpo de requisição, inserir headers(utilizado com autenticacao, onde mandamos o token), tudo que é possível com uma aplicação web;
+- Conseguimos baixar o mesmo atraves do site postman.com
+- Collections = API's
+
+Testando rota com Postman
+- Para acessar uma rota com o Postman precisamos configurar o client;
+- Devemos inserir o verbo correto para a rota;
+- E também configurar o endpoint, que é a URL onde nossa rota foi estabelecida;
+- Enviando a requisição, receberemos a resposta;
+
+Criando uma rota de POST
+- Para criar a rota de POST vamos utilizar o método post do Express;
+- Podemos extrair os dados da requisição, acessando req.body;
+- Da mesma maneira que no get, podemos retornar uma resposta como JSON pela API;
+
+Rota com POST na API
+- Para acessar a rota de POST precisamos mudar o verbo e a URL do endpoint da API;
+- Depois precisamos alterar o corpo da requisição com os dados solicitados pela API;
+- E então enviar o request;
+
+Adicionando status na resposta
+- Os status podem ajudar no desenvolvimento da nossa aplicação;
+- Exibindo mensagens de sucesso ou erro, por exemplo;
+- Precisamos entre res e o método json definir um número de status HTTP;
+- Isso é feito por meio do método status;
+- A tabela de statuos, podemos encontrar digitando status http o primeiro link do developer mozila
+
+A realidade sobre as APIs...
+- A API é desenvolvida de forma muito semelhante a quando criamos projetos com Handlebars, por exemplo;
+- Temos algumas alterações leves, como: resposta apenas por JSON;
+- Mas isso acaba até simplificando as coisas, separando as responsabilidades;
+- Ou seja, reaproveitamos todo o conhecimento visto durante o curso;
