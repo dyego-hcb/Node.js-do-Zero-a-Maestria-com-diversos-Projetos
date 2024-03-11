@@ -1,0 +1,52 @@
+-- Resumo Secao 17: Apendice A: Avancando no npm - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 17: Apendice A: Avancando no npm - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos avancar no npm, para conhecermos mais a fundo esse gerenciador de pacotes do node, fazendo com que estejamos aptos a resolver algum problema em alguma aplicacao real de projeto e tambem gerar uma praticidade, visto que esses pacotes sao desenvolvidos para deixar os codigos mais simples possiveis
+
+- Verificando a versao do npm: Para verificar a versao do node, iremos utilizar o comando npm -v, e usado para veriricar se o node esta instalado, e node -v para veriricar sua versao do node, podemos verificar no site do npm qual a versao final do npm, isso e usado para verificar eventuais bugs de versao nao ideal por exemplo, e entre outros bugs tambem
+
+- Criando projeto rapidamente: O comando npm init --yes define tudo como sim e inicia com os dados default, nao precisamos ficar apertando enter para criar um projeto com npm
+
+- Configuracao de modulo: Iremos ver como configuramos o modulo para que todas as vezes que dermos o npm inti --yes, virem esses valores ja preenchdido, com o comando npm config set init-nome_modulo conteudo
+No site da npm/misc/config podemos ver todas as config que podemos editar
+
+- Exibindo configuracoes do npm: Podemos ver o que foi setado atraves do npm set, com o seguinte comando npm get, onde iremos ver todas as keys de config que irao sair no packgejson do projeto
+
+- Deletando valores de configuracao: Com o seguinte comando npm config delete nome_chave
+
+- Instalacao de modulo global: Para instalarmos modulos globais, devemos usar a flag -g no moento de instalacao do pacote, com isso o pacote e instalado de forma global no nosso projeto e nao aparece nas lista de dependencias, como pore exemplo npm install nome_pacote -g
+Para fazer com que seja possivel executar esse modulo global, devemos utilizar o seguinte comando antes de executar o nosso codigo npm link nome_pacote para que esse pacote tenha um link associado a sua chamada no codigo
+
+- Removendo modulos globais: Para remover os modulos globais, que e o npm remove nome_module -g onde informa que e uma depenecia global e removera a mesma, com isso projetos que usam o link dessa dependencia global nao irao rodar
+Se fizer o link e remover o modulo global, ao instalar novamente como modulo global esse modulo que foi removido, o link e criado automaticamente
+
+- Listando modulos instalados: Podemos ver todas as dependencais de um projeto, com o comando npm list, podemos tambem listar apenas as mais importantes com o comando npm list --depth=0, onde filtramos a profundidade da arvore de dependencia, podemos ve todoas as dependencias globais com o comando npm list -g, podemos listar as mais mipotantes com npm list -g --depth=0
+Podemos listar tambem com o comando npm ls
+
+- Limpando dependencias nao utilizadas: Podemos remover as dependeicas nao utilizadas, de diversa maneiras, utilizandos os comandos de remove rm no console, remover a mao no packge.json, e tambem podemos utilizar um comando, que e 
+npm prune, onde o mesmo ve o que ta nas dependencia e verifica o que ele pode remover ou nao no node_modules
+
+- Procurando modulos pelo terminal: Para procura modulos no terminal, devemos utilizar o seguinte comando npm search nome_lib_ou_p_chave
+
+- Verificando dependencais que podem ser atualizadas: Para isso, utilzamos o seguinte comando npm outdated faz uma varredura nos pacotes do projetos e fala quais estao desatualiadso e info sobre as versoes, para atualizar de fato os pacotes, usamos o npm update
+
+- Verificando e limpando cache do npm: Utilizamos os seguinte comando npm cache verify, ele vai verifica o que tem cache ou nao, e o qua ta sendo consumido no pc, para limpar o cahce, usamos o comando npm cache clean --force 
+
+- Indentificando vulnerabilidades: Podemos detectar possiveis falhas de segurancas nos modulos, utilizanod o seguinte comando npm audit, onde o mesmo ira fazer uma auditoria do codigo e ve o que ta ruim e bom
+
+- Corrigindo vulnerabilidades dos pacotes: Para corrigira as vulnerabilidades, utilizamos o seguinte comando npm audit fix, caso der erro, utilizar o comando npm audit fix --force, porem nao e legal utilzar essa meneira, que pode quebrar algo no projeto, em caso de que nao ha nada de errado em quebrar
+
+- Conhecendo pacontes com npm view: o npm view nome_pacote ele busca as infos do pacote na base de dados do npm, e mostra as princiapis infos desse pacote, no cmd sem termos que ir no site
+
+- Acessando documentacao do pacote: Para acessar as informacoes do pacote, na pagina oficial do npm, basta dar npm docs nome_pacote que seremos direcionarios a documentacao oficail do pacote
+
+- Home page do pacote: npm home nome_pacote redireciona para a pagina home do pacote
+
+- Reduzindo duplicacao de pacotes: O comando npm dedupe e utilzado para remover dependencias duplicadas, fazendo com que nao fique codigos duplicados
+
+- Instalando pacotes sem salvar nas dependencias: Utilizamos o comando npm install nome_pacote --no-save para instalar depenecias sem salvalas no packgejson
+
+- Verificando scripts do projeto: Podemos saber os scripts que existem no nosso pacote, que e o seguinte comando npm run, o mesmo mostra todos os scripts que temos na aplicacao
+
+- Conclusao da sessao: Nessa secao, vimos diversos novos comandos que sao utils em ambientes reais de desenvolvimento de aplicacoes, fazendo com que criamso uma boa base sobre o npm
