@@ -1,0 +1,18 @@
+-- Resumo Secao 16: Masterclasses sobre React - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 16: Masterclasses sobre React - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa etapa, iremos falar sobre algumas atualizacoes no react, e tambem veramos na pratica, onde utilizaremos o projeto disponivel no seguinte repositorio  https://github.com/matheusbattisti/curso_node/tree/main/19_REACT_ROUTER_6
+Como base inicial desse projeto para vermos as mudancas do react 5 para o 6
+Com isso, na pasta exercicios contem uma pasta chamada exercicios video aula, dentro dessa pasta estara o codigo fonte da versao inical com o nome de app inicial e da versao final com o nome de app dessa aula.
+
+Podemos ver o que mudou de uma atualizacao para outra no react, indo no site oficial do react e indo em upgradint from nunmero da versao
+
+Para instalar a ultima versao do react, pasta utilizar o seguinte comando npm install react-router-dom@lastet
+Obs1: Ao dar o npm install, caso tenha um pacote instalada o mesmo e atualizado se houver novas versoes
+
+- O History foi trocado por Navigate
+- O redirect foi alterado para Route path no lugar do from e o to por element={<Navigate to>}
+- O Switch foi trocado para Routes
+- Os componentes que serao renderizados, teram que vir no element{Component}, dentro do elemento Route
+- O exact e usado no dom 5 pra baixo pra acerta a url e deixar acesar os itens da rota, no 6 nao e necessario
