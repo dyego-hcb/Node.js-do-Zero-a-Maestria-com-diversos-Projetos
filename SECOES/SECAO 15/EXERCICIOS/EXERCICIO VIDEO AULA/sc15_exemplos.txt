@@ -1,0 +1,5 @@
+Nessa secao iremos criar um projeto chamado Get a Pet que funcionara da seguinte maneira, e uma plataforma, onde os usuarioas devem cadastrar e fazer login, para poderem adotar algum pet, utilizando mongodb node e react, com o back-end separado do front-end
+
+O projeto estara contindo no seguinte repositorio do github, disponivel no link abaixo:
+
+https://github.com/dyego-hcb/projeto_get_a_pet

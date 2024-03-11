@@ -1,0 +1,299 @@
+-- Resumo Secao 15: Projeto 3: Get A Pet(API, RESTfull, Express, MVC, MongoDB com Mongoose, React) - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 15: Projeto 3: Get A Pet(API, RESTfull, Express, MVC, MongoDB com Mongoose, React) - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos criar um projeto chamado Get a Pet que funcionara da seguinte maneira, e uma plataforma, onde os usuarioas devem cadastrar e fazer login, para poderem adotar algum pet, utilizando mongodb node e react, com o back-end separado do front-end
+
+O projeto estara contindo no seguinte repositorio do github, disponivel no link abaixo:
+
+https://github.com/dyego-hcb/projeto_get_a_pet
+
+Abaixo, iremos listar o passo a passo para o desenvolvimento desse projeto, juntamente com algumas anotacoes que acharmos importante.
+
+Passo 1: Inicializacao do projeto backend part:
+- Nessa etapa, iremos inicializar o projeto, como falamos que o mesmo tera o back-end separado do front-end, entao, prmeiramente devemos criar uma pasta chamada back-end e uma pasta chamada front-end
+- Apos feito isso, inicie o npm na pasta do back-end, e instale as seguintes dependencias:
+- bcrypt, cookie-parse, cors, express, jsonwebtoken, mongoose, multer, nodemon
+- Apos feito isso, iremos criar na pasta backend, as outras pasta necessarias para o padrao MVC (model e controller)
+- Criaremos tambem a pasta db para tratar da conexao com o banco
+- Criaremos tambem uma pasta chamada helpers, onde dentro dela estara contido funcoes que irao nos ajudar ao decorrer da aplicacao
+- Criaremoas uma pasta public, dentro dela iremos colocar uma pasta chamda img e dentro dessa pasta img iremos criar 2 pastas pets e users que irao conter as imgs do usuarios e pet
+- Criearemos a pasta routers, para salvar as rotas 
+- Nessa etapa, ja configuramos o setup inicial do backend, o mesmo ira rodar na porta 5000 pois o front ira rodar na porta 3000
+
+Passo 2: Criando Models:
+- Nessa etapa, iremos criar os models que fazem parte da nossa logica de negocio, nesse caso serao os models de users e pet
+- Tambem iremos configurar a conexao com o bd MongoDB
+
+Passo 3: Criando Controller e rotas de usuario:
+- Nessa etapa, iremos configurar as rotas do usuarios, e testalas atraves do postman
+
+Passo 4: Validacoes de usuario:
+- Nessa etapa iremos implementar a logica para validacoes de usuario, nessa etapa, iremos realizar a logica de validacoes dos campos na parte de registro de usuario.
+
+Passo 5: Registrando um usuario no sistema:
+- Nessa etapa, iremos finalizar a logica de registro de usuario, no passo passado, fizemos algumas validacoes antes de de fato realizar o registro de usuario
+- Agora nessa etapa, iremos registrar um usuario no bd
+- Para cadastrarmos usuarios, devemos tomar alguns cuidados, como critpografar a senha do mesmo para que nao haja vazamentos de forma facil
+
+Passo 6: Retornando token JWT:
+- Nessa etapa, iremos concluir o registro de um usuario com a criacao de um token, essa funcao sera utilizada novamente depois para realizar o login de usuarios
+- Para isso, iremos criar um arquivo na pasta helpers chamada create-user-token, nele iremos implementar a logica de criacao de tokens para os usuarios.
+- Para criar os tokens, utilizamos a funcao sign(), onde passamos por paremtros quais parametros que irao junto com o token, como por exemplo o id, e apos isso, deve-se colocar um secret, isso ira acarretar na seguranca do token
+
+Passo 7: Funcao de login do sistema:
+- Nessa etapa, iremos desenvolver a funcao de login no user controller, iremos utilizar a funcao create user token para gerar um token de autenticacao para o usuario que fizer login
+
+Passo 8: Verificando usuario pelo token
+- Nessa etapa, iremos obter o usuario pelo token de acesso quando o mesmo realizar o login.
+- As iformacoes como o token, e outros atributos definidos, irao vir no headder da requisicao
+
+Passo 9: Pegando token do headder:
+- Nessa etapa, iremos criar uma funcao que ira pegar o token que vem do headder da requisicao
+
+Passo 10: Resgatando um usuario por id:
+- Nessa etapa, ao pegar os dados do token, iremos pegar um usuario por id e trazer os dados desse usuario, para uma edicao por exemplo
+
+Passo 11: Verificacao do token do usuario:
+- Nessa etapa, iremos fazer uma rota protegida, onde a mesma so pode ser acessada se o usuario tiver um token de autenticacao
+- Com isso, iremos nessa etapa desenvolver uma funcao de verificao de token do usuario
+- Para atualizar dados, iremos utilizar a rota de patch, visto que nessa rota, atualizara apenas os campos que foram passados, os demais permaneceram com o valor original do db
+
+Passo 12: Iniciando validacoes de atualizacao de usuario:
+- Nessa etapa, iremos desenvolver a validacao dos dados que vao chegar da requisicao
+
+Passo 13: Finalizando atualizacao:
+- Nessa etapa, iremos realmente finalizar a funcao de atualizacao de um usuario no db
+
+Passo 14: Upload de imagem do usuario:
+- Nessa etapa, iremos implementar a funcionalidade de upar imagens para servir de foto de perfil para os usuarios, porem iremos implementar nesse momento a parte do backend apenas
+- Para isso, iremos usar o multer
+_ Iremos criar um helper de upload de img, visto que usaremos depois para os pets
+
+Passo 15: Iniciando rotas de Pets:
+- Nessa etapa, iremos comecar a desenvolver as funcionalidades do backend para os pets
+- Iremos fazer uma pequena estrutracao do que iremos utiliza ao decorred do deseonvovlvimento
+- Como rotas, controllers, importar no index.js, etc.
+
+Passo 16: Salvando Pet no sistema:
+- Nessa etapa, iremos desenvolver a funcionalidade de adicionar novos pets no banco de dados, para isso, iremos utilizar middewares, visto que para cadastrar um pet, o usuario deve-se estar autenticado
+
+Passo 17: Upload de multplias imagens:
+- Nessa etapa, iremos implementar a funcionalidade de adicionar multiplas imagens a um pet, para finalizar o cadastro de pet
+
+Passo 18: Funcao de resgatar todos os Pets:
+- Nessa etapa, iremos desenvolver uma rota de listar todos os pets que esta no bd
+
+Passo 19: Funcao para resgatar todos os Pets do usuario:
+- Nessa etapa, iremos implementar a rota para retornar todos os pets de um usuario que esta autenticado e esta em sua dashboard
+
+Passo 20: Funcao para resgatar todas as adocoes:
+- Nessa etapa, iremos desenvolver uma funcionaldade, onde iremos buscar todos os pets que foram adotados
+
+Passo 21: Resgatando Pet pelo id:
+- Nessa etapa, iremos implementar a funcionalidade para retonar um pet por id, simulando por exemplo quando um usuario clicka em um pet especifico
+- E ver alguns dados importantes do mesmo
+
+Passo 22: Removendo Pet do sistema:
+- Nessa etapa, iremos implementar a funcionalidade de remover um pet do sistema, para isso, usaremos a rota de delete
+
+Passo 23: Atualizacao do Pet:
+- Nessa etapa, iremos implementar a funcionalidad de atualizar dados do pet
+
+Passo 24: Agendendo visita de adocao:
+- Nessa etapa, iremos implementar a funcionalidade de agendar uma visita de adocao a um determinado pet
+
+Passo 25: Concluindo adocao de Pet:
+- Nessa etapa, iremos implementar uma funcao para finalizara adocao e marcar um pet como adotado e mostrar essa info na tela principal
+- Onde o usuario que e dono do pet confirma a adocao
+
+Passo 26: Iniciando o projeto frontend parte:
+- Nessa etapa, iremos inciar o projeto, pelo lado do frontend, onde iremos desenvolver nossas telas que irao ser integradas com o backend e nos gerar uma aplicacao mais palpavel
+- Em primeira instancia, iremos instalar as seguintes dependencias
+- npx create-react-app
+- npm install axios(para comunicar com as apis) events(parte de mesnageria) react-icons(se precisa de icone) react-router-dom(para criarmos um roteamento de paginas)
+- Como vamos usar o back separado do front, iremos criar um arquivo chamado .env.local para configuramos algumas variavels globais para a conexao com a api do bd
+- nele estar contido uma variavel onde teremos a url da api, visto que a mesma e estatica, muda de acordo com as rotas que serao mudadas de acordo com as acoes no front
+
+Passo 27: Estuturando o projeto:
+- Nessa aula, iremos estururar o nosso projeto, como a criacao de pastas, exclusao de alguns aruivos que nao iremos usar, etc.
+- Deixamos apenas os aruqivos favicon.icon e index.html da pasta public
+- Deixamos apenas os arquivos app.js index.js e index.css 
+- Tiramos as ref dos arquivos anteriores
+- Feito isso, iremos criar algumas pasta na pasta secret
+- Dentro dela vai ficar as telas
+- Criamos uma pasta assents na pasta src nessa pasta ira conter img js css que nao tem haver com react
+- Criamso uma pasta chamada components, visto que o react e baseado em componentes e os memos podem ser reutilizados
+- Criamos ua pasta chamada context, pois o react tem um recurso chamado de contexo, onde podemos passar variaveis para estar disponivel em algumas partes do sistema, como por exemplo partes de autenticacao
+- Criaremos uma pasta chama hooks
+- Criamos uma pasta chamada utils, onde teremos funcoes que possam ser reutilizadas
+
+Passo 28: Inserindo o React Router:
+- Nessa etapa iremos melhorar um pouco o css base que temos na nossa pagina, esse css base e utilizado basicamente em todas as parginas, para definir alguns padroes de estilos
+- Nessa etapa, tambem iremos inserir o react router, para direcionarmos para uma determinada pagina quando o usuario digitar uma determinada url
+- Como pore exemplo, a pagina de cadastro de usuarios que se econtra no /users/create por exemplo, utilizanod o modulo routes e route do react router
+- Com o react routes podemos renderizar componentes, esses componentes sao as paginas que o usuario consegue visualizar
+- Nos componante podemos separa as paginas que requeram autenticacao das paginas que nao requrem, onde nas paginas que requerem autenticacao iremos realizar um tratamento para verificar se o usuario esta autenticado ou nao.
+
+Passo 29: Estruturando navbar e footer:
+- Nessa etapa, iremos trabalhar na criacao do nav-bar e do footer, visto que ambos sao utilizados em todas as paginas, a fins de melhoria na estica inicias das paginas
+- Os mesmos ficaram salvos na pasta componentes/layouts
+- Para utilizarmos os mesmos, devemos importalos e colocar a navbar acima do primeiro routes e o footer abaixo do ultimo rootes, pois ambos devem aparecer em todas as paginas
+
+Passo 30: CSS na navbar e footer:
+- Nessa etapa iremos adicionar os estilis do nav-bar e do footer, visando melhorar seu desing
+
+Passo 31: Criando componante de container:
+- Nessa etapa iremos cria os componentes estruturais do nosso projeto, visto que temos uma navbar e um footer, ambos devem ficar em uma posicao ou alturas fixas
+- E chamado de Container
+- Nele, podemos passar informacoes sobre os filhos daquela determinada classe, para exibicao dos mesmos
+- Com ele, podemos mudar facilmente o conteudo da main
+
+Passo 32: Criando pagina e form de registro:
+- Nessa etapa, iremos desenvolver a pagina e o formulario de registro
+- Iremos criar cada um dos inputs que iremos utilizar, dentro da pasta form, para que possamos reaproveitar o codigo
+
+Passo 33: Estilos gerais de formulario:
+- Nessa aula, iremos adicionar os estilos gerais qure iremos ter no projeto para os forumularios
+
+Passo 34: Criando objeto de usuario: 
+- Nessa etapa, iremos linkar o front ocm o backend e testar verificando se conseguimos gerar o token de autenticacao
+- Iremos utiliar um hook para verificar o state do usuario
+- Utilizando o handlechange onde captamos um evento, podemos pegar informacoes e salvar no hook
+
+Passo 35: Criando hook de autenticacao:
+- Nessa etapa, iremos utilizar o hooks para fazer chamadas na api para tratar de autenticacao
+- Hookes, sempre tem o use
+- No pacote utils, iremos cirar um arquivo js chamado api, que ira realizar a comunicacao com a api, visto que utilizaremos muito esse codigo, iremos criar um aqruivo externo para que possamoas apenas chamar a funcao, onde iremos conectar com a api.
+- Ao cirar a conexaco, podemos enviar menssagens http de post, get, update, delete, etc, atravez da conexao com api
+
+Passo 36: Criando contexto de usuario: 
+- Nessa etapa, iremos criar o contexnto de usuario, basicamente verificar se o mesmo esta logado ou nao, iremos implementar essa parte agora pois iremos utilizar muito a mesma futuramente
+- A nomenclatura do context e o Nome_EntidadeContext.js
+- Iremos trocar as informacoes quando necessario, como pore exemplo mudar o nome do usuario na tela quando o mesmo logar, nao mostrar nomes na tela quando nao estiver logado, etc.
+
+Passo 37: Executando rota da API no formulario:
+- Nessa etapa, iremos executar a rota API no form de register de user e registrar via interface
+- O context temos acesso aos metodos 
+- O Provider gera a possibilidade de acessar em determinado lugares
+
+Passo 38: Criando hook de flash message:
+- Nessa etapa, iremos criar os hooks de flash messages, visto que estamos lidando com info que devem ser preenchidas, o usurario deve saber quais sao os campos que nao podem ficar em branco.
+- Criando esse hook, poremos reutilizar o mesmo
+- Iremos utilizar o modulo de events para mandar as flash massages, mais especificamente um arquivo chamado buss, iremos realizar a importacao dos Events, visando reutilizacao de codigos
+
+Passo 39: Criando componente de mensagem:
+- Nessa etapa, iremos desenvolver o componente de mensagem, o mesmo sera responsavel por mostrar as mensagens de erro para o usuario
+
+Passo 40: Finalizando componente de flash message:
+- Nessa etapa, iremos finalizar o componente de flash message, faremos com que o mesmo fique funcional, exbindo as devidas mensagem e recebendo a devida estilizacao quando determinado tipo de mensagem tiver que ser mostrado
+
+Passo 41: Autenticando usuario cadastrado:
+- Nessa etapa, iremos lidar quando um usuario se cadastra, o mesmo deve-ser autenticado e redirecionado para por exemplo a pagina principal ja logado
+
+Passo 42: Persistindo autenciacao no front:
+- Nessa etapa, iremos lidar com a persistencia de autenticacao, onde iremos mostrar uma determinada coisa se o usuario estiver logado e outra caso nao esteja, para estar logada deve-se estar autenticado.
+- As mudancas serao mais visiveis na nav-bar, onde nao teremos mais o link para a rota de registrar um usuario, teremos um botao de logout, de acesso a dashboard e outros itens que compoe a logica do nosso negocio.
+
+Passo 43: Funcao de logout:
+- Nessa etapa iremos implementatr a funcao de logout, para quando o usuario estiver logado, que e o caso de quando cadastramos um novo usuario, iremos implementar a funcionalaidade de logout
+- Iremos tambel realizar algumas alteracoes na nav-bar, como a adicao de um novo botao para realizar o logout do uusario autenticado
+
+Passo 44: Criando formulario de login:
+- Nessa etapa, iremos criar o formulario de login e linka-lo com a api do backend e realziar requisicoes de teste de login
+
+Passo 45: Criando pagina de perfil:
+- Nessa etapa, iremos criar a pagina de perfil do usuario, onde o usuario pode altear seus dados, colocar foto de perfil, etc.
+- Iremos implementar somente a estrutura basica da pagina 
+- Criaremos uma pasta para salvar as paginas dos usuarios, visando deixar o codigo mais organizado
+
+Passo 46: Formulario de edicao de usuario:
+- Nessa etapa, iremos implementar o formulario de edicao do usuario, iremos focar mais na parte estetica e no proximo passo iremos focar com a ligacao da API com o front
+
+Passo 47: Resgatando usuario para preencher formulario:
+- Deixar a pagina de edicao funcional para puxar os dados do bd e preencer os campos com os dados do usuario no qual deseja editar os dados
+
+Passo 48: Atualizacao do usuario:
+- Deixar a pagian de edicao 100% funcional, fazendo com que ao clickar no botao de editar, edite o objeto no bd
+
+Passo 49: Atualizacao de imagem do usuario:
+- Nessa etapa, iremos implementar a funcionalidade para salvar uma imagem no bd, fazendo com que atualize a foto de perfil do usuario.
+
+Passo 50: Criando componente de imagem:
+- Nessa etapa, iremos adicionar o compnente de img e seus estilos, para mostrar ao usuario qual a foto de perfil do mesmo
+
+Passo 51: Criando pagina de lista de pets do usuario logado:
+- Nesse etapa, iremos criar a estutura inicia da pagina dashboar de pets d do nosso projeto
+
+Passo 52: Pagina de cadastro do Pet:
+- Nessa etapa, iremos criar a estutura inicial da pagina de cadastro de pets
+
+Passo 53: Inicio do form de pet:
+- Nessa etapa, iremos desenvolver o form de cadastro de pet
+
+Passo 54: Terminando fomrulario de pet:
+- Nessa etapa, iremos finalizar o fomr de cadastro de pet
+
+Passo 55: Conculsao da tela de adicionar pet:
+- Nessa etapa, iremos fazer com que o front utilzie a api do backend
+
+Passo 56: Requisicao para pegar pets cadastrados:
+- Nessa etapa, iremos mecher na pagina de my pets que a dashboar do usuario, onde nessa etapa iremos trazer os dados do bd
+
+Passo 57: Exibindo os pets na dashboard:
+- Nessa etapa, iremos exiber os pets na dashboard, esses pets foram buscados do bd
+
+Passo 58: CSS da dashboard:
+- Nessa etapa, iremos aplicar estilcos css na nossa dashboard
+
+Passo 59: Removendo pet do sistema:
+- Nessa etapa, iremos implementara funcionalidade de rmover um pet, atraves da dashboard
+
+Passo 60: Criando pagina de edicao de pet:
+- Nessa etapa, iremos criara view de edicao de pets
+
+Passo 61: Preenchendo formulario de edicao de dados:
+- Nessa etapa, iremos ja deixar o formulario de edicao preenchido com os dados do pet que sera editado
+
+Passo 62: Atualizando Pet:
+- Nessa etapa, iremos atualizars os pets de fato, ou seja, iremos ligar o font com a api
+
+Passo 63: Resgatando os pet na home:
+- Nessa etapa, iremos resgatar todos os pets e listar na home, porem nessa etapa, iremos fazer apenas os cards dos mesmos
+
+Passo 64: Exibindo pets na home:
+- Nessa etapa, iremos de fato, buscar os elementos no bd e mostrar na home
+
+Passo 65: CSS da home:
+- Aplicando CSS na pagina home
+
+Passo 66: Pagina de detalhes do pet:
+- Nessa etapa, iremos cirar a pagina de detalhes de um determinado pet
+
+Passo 67: Buscando pet via API:
+- Nessa etapa, iremos buscar o pet via api no back end e mostrar o mesmo na pagina de detalhes do pet
+
+Passo 68: Estruturando pagina de Pet:
+- Nessa etapa, iremos melhorar a esturura da pagina de pet
+
+Passo 69: CSS da pagina de Pet:
+- Nessa etapa, iremos aplicar os estilos na pagina de pet
+
+Passo 70: Funcao de agendar visita:
+- Nessa etapa, iremos adicionar a funcionalidade de agendar visitas, para que os interesados em adotar algum pet, possam entrar em contato com o tutor do pet e marcar uma visita
+
+Passo 71: Criando paginas de adocoes:
+- Nessa etapa, iremos criar a pagina de adocao de pet
+
+Passo 72: Finalizando paginas de adocoes:
+- Nessa etapa, iremos finalizar a pagina de adocao de pet
+
+Passo 73: Conculsao de adocao:
+- Nessa etapa, iremos concluir a adocao, via uma acao no dashboard do dono
+
+Passo 74: Conculsao do projeto:
+- Nesse projeto, colocamos em pratica tudo o que vimos no curso, e ainda praticamos o desenvolvimento do front-end em react e a consumacao de api do back end no front
+
+Notas Adicionais: Atualizacao do projeto para React Router 6:
+- Tivemos algumas mudancas no react em realcao aos codigos do curso devido a uma atualizacao, com isso, mudaria algumas coisas, como o jeito de criar as rotas, etc.
+- Ao ler as documentacao do react, as mudancas foram faceis de se fazer
