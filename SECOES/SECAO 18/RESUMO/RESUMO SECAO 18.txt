@@ -1,0 +1,92 @@
+-- Resumo Secao 18: Apendice B: Introdução ao HTML - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+O HTML NÃO É UMA LINGUAGEM DE PROGRAMAÇÃO É UMA LINGUAGEM DE MARCAÇÃO DE TEXTO
+
+QUALQUER PAGINA WBE É FORMADA POR HTML
+
+O HTML É COMPOSTO POR TAGS
+A PRIMEIRA É A 
+
+<!DOCTYPE html> -> INFORMA O NAVEGADO QUE É UM ARQUIVO HTML
+<html></html> -> INICIO DO CODIGO HTML
+<head></head> -> Tags de config e tag q chama arquivos
+<body></body> -> Conteudo da pagina
+<title></title> -> Titulo na aba do navegador
+<h1,h2,h3,h4,h5,h6></h1,h2,h3,h4,h5,h6> -> Tag de tiutlos e subtitulos
+
+Ao clickar no arquivo htmll ele abre no navegador.
+
+<p></p> -> Tag de paragrafo
+
+Todas as tags tem que serem fechadas
+
+Console é usado para debugar.
+
+Headdings (titulos), no html temos 6 tamanhos de tipo do h1 ao h6
+
+h1
+h2
+h3
+h4
+h5
+h6
+
+Os titulos são usados para semantica e ajudar na relevancia das SIO 
+
+Para comentar em HTML devemos usar a sintaxe <!-- --> Comentarios sao imporantes para outras pessoas e explicar logicas
+
+A tag <a href="ref">texto</a> é usada para redirecionar ao clickar em uma determinada palavra, mas para isso precisa usar o href
+
+A tag para imags é a tag <img src='camainho' alt=''/> o src é usado para dizer qual o caminho da img para ser renderizada, o alt é utilizado para acessibilidade e trazer info caso nao tenha mais a img no serve e tambem para SIO
+
+Para adicionar tabelas, precisamos de uma tag que é a tag 
+<table> -> Abre a tabela
+<tr> -> table row linha
+<th> -table headder titulo
+<td> -> table data conteudo
+<caption> -> Legenda da tabela
+
+Tag das listas ordenadas:
+
+<ol> -> Tag da lista ordenada para iniciar
+<li> -> item da lista 
+
+Vem ordenada de 1 a n por padrao, pode troca o atributo type que troca o tipo de ordenacao, por exemlpo A,B C, I
+
+Tag das listas nao ordenadas:
+
+<ul> -> Tag da lista nao ordenada para iniciar
+<li> -> item da lista 
+
+Ela vem com bolinhas, que é possivel mudar com CSS
+
+Formularios sao campos de info para entregar para o backend para fazer requiscoes com dados
+
+<form action='caminho' method="nome> -> Inicia a tag form, action é para onde deve ir para realizar a acao, ex cdadastra com um file node, e o metho e o metodo do form geralmente e get(receber) ou post(envio)
+<input tpye="tipo" name="name> -> Campo para inserir info, type define o tipo do cmapo, e o name é o nome do cmapo para pegar a info de forma facil
+<br> -> quebra de linha
+<input type=submit value=Enviar> -> buttao de enviar o type é o submit pois tem que pegar a cao de enviar o value e o nome que aparece no botao
+O value é o valor do input
+Placeholde é uma dica de o que deve ser colocado no inputo
+Required é obrigado a prencher
+readonly -> sometnte leitura enviado para o back
+disable -> disabilita o campo nao é enviado para o back
+maxlength -> quantidade de caracters no campo
+tipos de inouts -> text, password, email, date, radio, checkbox, textarea (tem que definir rows e cols)
+
+O que nao pode faltar em arquivos html, as tags meta
+<title> -> Titulo da pagina
+<meta charshet> -> Corrigir caracteres
+<meta descritpion> -> Descricao da pag importante paga SIO
+<meta keywords> -> Palavras chaves do site importante para SIO
+<meta viewport> -> Detectar mobile para redenrizar corretamente
+
+HTML Semantico -<
+
+Dentro do header no body fica a navbar 
+Dentro da main fica o conteudo principal
+Dentro da section fica a secao secundaria
+Dentro de aside conteudo na laterol
+E o footer é o rodape
+
+
