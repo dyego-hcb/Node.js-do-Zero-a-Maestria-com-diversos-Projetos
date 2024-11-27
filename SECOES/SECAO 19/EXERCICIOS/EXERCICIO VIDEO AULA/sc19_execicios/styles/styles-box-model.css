@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+}
+
+.box-model{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    padding: 20px; /* geral */
+    /* especifico */
+    padding-top: 20px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    /* especifico inline 4 medidas */
+    /* top, right, bottom, left */
+    padding: 30px 20px 5px 10px;
+    /* especifico inline 3 medidas */
+    /* top, right-left, bottom */
+    padding: 30px 20px 5px;
+    /* especifico inline 2 medidas */
+    /* top-bottom, right-left */
+    padding: 30px 20px;
+    border: 3px, solid, black;
+    border-top: 3px, solid, orange;
+    border-bottom: 3px, solid, white;
+    border-left: 3px, solid, green;
+    border-right: 3px, solid, violet;
+    border-width: 20px 10px 8px 7px;
+    border-radius: 5px;
+    margin: 50px;
+    display: block;
+}
+
+.paragrafo-box{
+    color: black;
+    margin: 0;
+}

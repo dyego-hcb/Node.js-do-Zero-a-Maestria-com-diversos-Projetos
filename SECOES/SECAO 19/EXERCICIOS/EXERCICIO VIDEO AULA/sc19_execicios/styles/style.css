@@ -1,0 +1,83 @@
+/* aula 01 */
+h1 {
+  color: red;
+}
+
+p{
+    color: blue;
+}
+
+h2{
+    color: green;
+    text-align: center;
+    font-size: 50px;
+}
+
+.p-texto{
+    color: lightblue;
+}
+
+#titulo-app{
+    color: blueviolet;
+    font-size: 40px;
+}
+
+.nome{
+    color: orange;
+}
+
+.hexa{
+    color: #6A40C4;
+}
+
+.rgba{
+    color: rgba(17, 197, 214, 0.2);
+    font: 50px;
+}
+
+div-background{
+    background-image: url('../imgs/por-do-sol.jpg');
+    height: 300px;
+}
+
+.titulo-background {
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+}
+
+.family{
+    color: #000;
+}
+
+.family.serif{
+    color: green;
+}
+
+.serif{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sans-serif{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.monospace{
+    font-family: 'Courier New', Courier, monospace
+}
+
+.italico{
+    font-style: italic;
+}
+
+.oblico{
+    font-style: oblique;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.variants{
+    font-variant: small-caps;
+}

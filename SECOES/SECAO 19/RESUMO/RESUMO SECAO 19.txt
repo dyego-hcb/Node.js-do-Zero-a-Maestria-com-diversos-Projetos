@@ -1,0 +1,182 @@
+-- Resumo Secao 19: Apendice C: Introdução ao CSS - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 19: Apendice C: Introdução ao CSS - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+O css serve para estilizar o html, deixando a pagina web mais bonita, o html é apenas o esqueleto.
+No computed no inspect element mostra todo o css.
+
+Para importar um css externo, precisamos usar a tag link com a seguinte sintaxe
+<link rel="stylesheet" href="caminho/css">
+
+stylesheet -> folha de estilo
+
+No arquivo css, devemos especificar a tag e abrir chaves dentro da chaves podemos estilizar o componente, exemplos
+
+nome_tag {
+    estilo: config;
+}
+
+O arquivo externo é a melhor maneira de se vincular o css.
+
+CSS Inline basta utilizar o style="define o estilo: config" dentro da abertura de uma tag, ex:
+
+<tag style="estilo: config;"></tag>
+
+E ruim pois o css inline tem um peso maior que o css externo
+
+CSS interno é quando usamos a tag <style> dentro do headder, ele tambem tem maior peso que o css externo, deixa muito grande o codigo html, eo html devese deixar apenas o esqueleto
+
+Sintaxe do css:
+
+seletor {
+    propiedade: valor;
+}
+
+Comentario em css:
+
+/* */
+
+A tag meta pode padronzar os caracteres, para isso
+<meta charset="UTF-8"> padrao ptbr, o utf muda para outras regioes
+
+Classes -> Utilizada em varios elementos para terem a mesma estilizacao, para estilizar classes usamos a seguinte sintexe:
+
+.nomeClasse {
+    propiedade: valor;
+}
+
+IDS -> Utilizada em elementos unicos sendo utilizado apenas uma vez, se uma tag tem uma id nenhuma outra tag pode ter o id igual, para estilizar ids usamos a seguinte sintexe:
+
+#nomeId{
+    propiedade: valor;
+}
+
+Dica: Se queremos atingir apenas 1 elemento usa id, se queremos atingir varios elementos utilizar classe
+
+Para adicionarmos cores, temos 3 maneiras, que sao:
+1- nome da core, onde basta usar o nome da cor em ingles
+2- Hexadecimal, sintaxe #VALOR_COR_HEXA
+3- RGBA , sintaxe rgba(val_red, val_gree, val_blue, val_opaci)
+
+Backgroud -> Cor do fundo da pagina ou imagem, para isso usamos a seguinte sintaxe
+
+background-color: cor -> para alterar a cor do fundo
+background-image: url(url_img) -> para definir uma img como fundo
+
+Dica: Para cada definicao fazer comentarios sobre o que esta estilizando abaixo 
+
+Fontes podemos fazer varias coisas com fontes, como alterar tamanho, cor, mudar o tipo, peso, etc.
+Podemos combinar classes, basta colocar espaço
+
+Podemos estilizar 2 classes ao mesmo tempo usando .nome.nome2
+
+Familias de fontes -> E o tipo de fonte, serifacas tem as perninas, sem serifa nao tem perina e monospace as letras ocupam o mesmo espaco
+
+
+Box-Model:
+
+ _________________________________________________________________
+|   ^                                                            |
+|   |  MARGIN                                                    |
+|   v                                                            |
+|   __________________________________________________________   |
+|   |   ^                                                     |  |
+|   |   |   BORDER                                            |  |
+|   |   v                                                     |  |
+|   |    __________________________________________________   |  |
+|   |    |  ^                                              |  |  |
+|   |    |  |   PADDING                                    |  |  |
+|   |    |  v                                              |  |  |
+|   |    |  ____________________________________________   |  |  |
+|   |    |  |   ^                                       |  |  |  |
+|   |    |  |   |   HEIGHT                              |  |  |  |
+|   |    |  |   |                                       |  |  |  |
+|   |    |  |   |               CONTENT                 |  |  |  |
+|   |    |  |   |                                       |  |  |  |
+|   |    |  |   |                               WIDTH   |  |  |  |
+|   |    |  |<--|-------------------------------------->|  |  |  |
+|   |    |  |   v                                       |  |  |  |
+|   |    |  |___________________________________________|  |  |  |
+|   |    |_________________________________________________|  |  |
+|   |_________________________________________________________|  | 
+|________________________________________________________________|
+
+
+Ao criar um elemento html, temos esse componente que podemos imaginar como se fosse a uma div, a cada momeno que voce meche nas Propeidades
+padding, border a div passa ter o tamanho de todos os quadrados que foram usados
+Margin e usado para definir espacamento de outros elementos nao entra no tamanho da div diferente do border e padding
+
+No computed podemos ver o box model
+
+Sintaxe border:
+
+Borda empurra pra fora da div
+border: largura, tipo, cor
+Estilo borda: solid, doted, double, dahsed
+
+Margin empurra o elemento em relacao ao outros
+
+Entendendo o display:
+
+A propiedade display tem 4 valores que sao
+none -> Nao mostra na tela
+inline -> deixa um ao lado do outro, porem nao aceitam largura e altura
+inline-block -> define um ao lado do outro e aceita largura e latura
+block -> define um abaixo do outro, em blocos de linhas
+
+Position é como a gente posiciona na tela, onde temos 5 valores, que sao
+
+static -> Fica no local onde foi colocada, nao alterado com propriedades de posicionamento como top, bottom, left, right
+relative -> Fica posicionado relativo ao elemento acima, as propeidades de posicionamento como top bottom left right afetam seu posicionamento
+absolute -> Fica posicionado em relacao ao pai, ela nao fica posicionada em relacao aos outros elementos, as propeidades de posicionamento como top bottom left right afetam seu posicionamento
+fixed -> Ela é relativa a view, esta sempre alnhada ao body e nao aos elementos pais igual a absolute, ela acompanha na tela onde estiver
+sticky -> Ela é basicamente igual a fixed, porem ela só acomapnha se o scroll passar na tela, caso nao fica no seu posicionamento
+
+Float -> Define onde o elemento vai flutuar
+
+Medidas em css:
+
+Pixel -> Define o tamanho por pixel da tela, da b.o com responsividade e tipos de tela
+% ->  Define o tamanho em relacao o elemento pai em relacao a % do tamanho desse elemento
+EM -> Define o tamanho em relacao a fonte do elemento pai,utilizada em responsividade
+REM -> Define o tamanho em relacao a fonte do elemento raiz HTML, geralmente 16px,utilizada em responsividade
+
+Propeidades CSS Principais:
+color -> Define a cor do elemento
+text-align -> Define o alinhamento do elemento
+font-family -> Define o tipo do elemento
+font-size -> Define o tamanho dentro elemento
+font-style -> Define o estilo na fonte como italico
+font-weight -> Define o peso da fonte, estilo negrito
+font-variant -> Deixa a font em caps look, porem com as letras menores que as que realmente estavam em caixa alta
+background-image -> Define uma imagem como fundo do elemento
+background-color -> Define uma cor para o fundo do elemento
+height -> Define altura do elemento
+width -> Define largura do elemento
+padding -> Define um espacamento da borda em relacao a todos as bordas se colocarmos um valor apenas, ou top direita baixo esquerda se colocarmos os 4 valores, para 3 valores top, right-left, bottom, para 2 valores top-bottom, right-left
+padding-top -> Define um espacamento da borda em relacao a borda de cima
+padding-left -> Define um espacamento da borda em relacao a borda de esquerda
+padding-right -> Define um espacamento da borda em relacao a borda de direita
+padding-bottom -> Define um espacamento da borda em relacao a borda de baixo
+border -> Borda do elemento
+border-top  -> Borda do elemento em cima
+border-left  -> Borda do elemento em esquerda
+border-right  -> Borda do elemento em direita
+border-bottom  -> Borda do elemento em baixo
+border-width -> Define a largura da borda em se colocar 1 valor e o mesmo para todas as direcoes, top direita baixo esquerda se colocarmos os 4 valores, para 3 valores top, right-left, bottom, para 2 valores top-bottom, right-left
+border-style -> Define o estilo da borda
+border-radius -> Define a borda mais arredondada
+margin -> Define espacamento em relacao a outros elementos a todos as proximos se colocarmos um valor apenas, ou top direita baixo esquerda se colocarmos os 4 valores, para 3 valores top, right-left, bottom, para 2 valores top-bottom, right-left
+margin-top -> Define um espacamento em relacao a outros elementos de cima
+margin-left -> Define um espacamento em relacao a outros elementos de esquerda
+margin-right -> Define um espacamento em relacao a outros elementos de direita
+margin-bottom -> Define um espacamento em relacao a outros elementos de baixo
+display -> Define o posicionamento como bloco ou inline e se e visivel ou nao
+position -> Define a posicao do elemento
+top -> Define a posicao em relacao a cima
+left -> Define a posicao em relacao a esquerda
+right -> Define a posicao em relacao a direia
+bottom -> Define a posicao em relacao a baixo
+float -> Define para onde o elemento vai flutuar
+overflow -> Define o tamanho da div caso use o float 
+clear -> Ignora que o elemento flutua
