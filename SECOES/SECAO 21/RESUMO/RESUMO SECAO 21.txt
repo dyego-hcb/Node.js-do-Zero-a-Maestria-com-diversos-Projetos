@@ -1,0 +1,33 @@
+-- Resumo Secao 21: Apendice E: Criaçao de Bancos de Dados em MySQL - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 21: Apendice E: Criaçao de Bancos de Dados em MySQL - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa seção iremos ver como criar o bancos de dados para iniciarmos os conhecimnetos em bancos.
+
+Para criar um banco de dados, usamos o comando SQL:
+
+CREATE DATABASE <NomeBD>
+
+Para listar bancos usamos o comando:
+
+SHOW DATABASES
+
+Para deletar um banco de dados usamos o comando:
+
+DROP DATABASE <NomeBD>
+
+OBS: APOS ESSA ACAO TODAS AS TABELAS DO BD E O BD SAO REMOVIDOS
+
+Para exportar um banco de dados, usamos o seguinte comando:
+
+mysqldump -u root <NomeBD> > <NomeArquivo>.sql
+
+Dessa forma salva todas as tabelas e dados se houver
+
+Para utilizar um banco usamos o comando:
+
+USE <NomeBD>
+
+Seleciona o bd para utiliazar
+
+OBS: nome_bd.tabela da pra usar sem usar o use
