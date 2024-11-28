@@ -1,0 +1,48 @@
+-- Resumo Secao 23: Apendice G: CRUD com MySQL - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 23: Apendice G: CRUD com MySQL - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos ver os comandos de CRUD (CREATE - READ - UPDATE - DELETE) no MySQL
+
+CRUD sao acoes utilizada em app
+CREATE -> Cria/insere dados (insert)
+READ -> lE dados (select)
+UPDATE -> Atualiza dados (update)
+DELETE -> Deletar dados (delete)
+
+Para selecionar todos os dados:
+
+SELECT * FROM <NomeTabela>
+
+Para selecionar colunas especificas:
+
+SELECT <NomeColuna> FROM <NomeTabela>
+
+Inserindo dados:
+
+INSERT INTO <NomeColuna> <atributos> VALUES (<valor>)
+
+Importancia do WHERE:
+
+A clausula where é muito importante pos ela determina quais registros vamos atualizar, recuperar e Deletar
+Se nao usarmos a clausula where para atualizar e deletar a acao ocorre para todos os elementos da tabela
+
+OBS: UPDATE E DELETE SEMPRE USAR WHERE
+
+Sintaxe:
+
+SELECT * FROM <NomeTabela> WHERE <atributo condicao>
+
+Atualizando dados:
+
+UPDATE <NomeTabela> SET <coluna=valor> WHERE <atributo condicao>
+
+OBS: WHERE É OBRIGATIORIO EM UPDATE
+
+Deletando dados:
+
+DELETE FROM <NomeTabela> WHERE <atributo condicao>
+
+OBS: WHERE É OBRIGATIORIO EM DELETE
+
+Delete sem where: NAO PODEMOS FAZER ISSO DELETA TODOS OS DADOS DA TABELA
