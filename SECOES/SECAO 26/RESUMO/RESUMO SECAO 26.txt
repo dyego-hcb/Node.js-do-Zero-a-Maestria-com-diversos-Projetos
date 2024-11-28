@@ -1,0 +1,55 @@
+-- Resumo Secao 26: Apendice J: Leitura de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 26: Apendice J: Leitura de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos aprender sobre a selecao de dados com read no MongoDB
+
+Para econtrar todos os dados no MongoDB, basta usar o comando
+
+db.<nomeCollection>.find({})
+
+OBS: {} É OPICIONAL
+Podemos usar o pretty para deixar melhor visualizacao
+
+db.<nomeCollection>.find().pretty()
+
+Mais sobre o pretty:
+O metodo pretty nao retorna todos os dados e sim um cursor, por isso precisamos digitar it para receber mais registro
+E uma forma de mostrar objetos em forma de paginacao
+O curso é um objeto que possui outros metodos em MongoDB, geralmente modificando a forma que os dados sao retornados
+
+PAra encontrar um dado espeficico, podemos definir o filtro dentro do find como na sintaxe abaixo:
+
+db.<nomeCollection>.find({campo: filtro})
+
+Para encontrada dados entre valores, usamos o poerador $in onde precisamos de uma lista de valores que queremos buscar, como na sintaxe abaixo
+
+db.<nomeCollection>.find({campo: {$in: [<dados>]}})
+
+Buscando por multiplos criterios, com isso os dados sao encontrados baseados em multiplas condicoes, para isso basta adicionar uma virgula no document e inseri o proximo requesito, como na sintaxe abaixo
+
+db.<nomeCollection>.find({campo: filtro, campo: filtro})
+
+OBS: SEMELHANTE AO OPERADOR AND EM SQL
+
+Operador $gt busca valores maioreq eu um determinado, veja a sintaxe
+
+db.<nomeCollection>.find({campo: {$gt: dados}})
+
+Operador $lt busca valores menores eu um determinado, veja a sintaxe
+
+db.<nomeCollection>.find({campo: {$lt: dados}})
+
+OBS: Quando temos 2 operadores iguais na consulta o MongoDB leva em consideracao o ultimo
+
+Operador $or busca valores que possuem um valor ou outro, veja a sintaxe
+
+db.<nomeCollection>.find({$or: [{<dados>}]})
+
+Operador $and e $or busca valores , veja a sintaxe
+
+db.<nomeCollection>.find({campo: filtro, $or: [{<dados>}]})
+
+Contando numero de resultados basta usar o metodo count, como na sintaxe abaixo
+
+db.<nomeCollection>.find({campo: filtro}).count()
