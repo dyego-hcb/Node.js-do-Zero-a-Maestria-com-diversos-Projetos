@@ -1,0 +1,42 @@
+-- Resumo Secao 25: Apendice I: Inserção de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 25: Apendice I: Inserção de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos abordar a criacao de dados no MongoDB, um dos pilares do CRUD
+
+CRUD é a sigla para CREATE READ UPDATE E DELETE
+
+São as operacoes basicasd de bd tanto relacionais quanto nao relacionais, praticamente toda app tera um crud.
+
+Em MongoDB tudo é documento é comum adiconar entidades com {} para inserir um documento na collections
+
+Para inserir dados no MongoDB usamos o comando:
+
+db.<nomeCollection>.insertOne({<dados>})
+
+OBS: STRING COM '' E NUMEROS E BOOLEAN NORMAL 
+
+Em uma collection nao precisamos respeitar as chaves do ourtos documents, como em um banco relacional que precisamos adicionar dados da coluna, em MongoDB mao precisamos
+
+Para inserir variso dados, basta usar o comando
+
+db.<nomeCollection>.insertMany([<dados>])
+
+Envia um array de dados
+
+Metodo insert serve para inserir um ou mais dados, porem ele é mais antigo e os metodos atuais sao o insertOne e insertMany
+
+db.<nomeCollection>.insert({<dados>})
+db.<nomeCollection>.insert([<dados>])
+
+Podemos alterar a forma de salvar o id e nao deixar o mongodb realizar essa operacao, para isso basta especificar o id nos parametros dos dados
+
+db.<nomeCollection>.insertOne({_id: 'id', dados})
+
+Write Concern é uma config que pode ser inserida no insertMany, onde podemos limitar o tempo de execucao da insercao
+Retornando um erro de time out caso exceda o mesmo, para isso usa-se a seguinte sintaxe
+
+db.<nomeCollection>;insertMany([<dados>], {w: 'majority', wtimeout: 100}) a insersao tem 100ms para ser executada
+
+Dicas de compandos complexos:
+Abrir um arquivo e digitar o comando em um editor de aquivos, por exemplo js para manter a sintaxe
