@@ -1,0 +1,19 @@
+-- Resumo Secao 28: Apendice L: Exclusão de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 28: Apendice L: Exclusão de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos ver como deletar dados com MongoDB
+
+Deletando um dado usamos o comando deleteOne, como na sintaxe abaixo:
+
+db.<nomeCollections>.deleteOne({campo: filtro})
+
+Deletando mais de um dado usamos o comando deleteMany, como na sintaxe abaixo:
+
+db.<nomeCollections>.deleteMany({campo: filtro})
+
+Deletando todos os dados usamos o comando deleteMany, sem especificar o filtro, como na sintaxe abaixo:
+
+db.<nomeCollections>.deleteMany({})
+
+OBS: OPERACOES DE DELETE SAO PERIGOSAS POIS DELETAM O  DADO, GERALMENTE O CAMPO FICA NO BD COM UM CAMPO DE INATIVO PARA NAO SER BUSCADO NO BANCO
