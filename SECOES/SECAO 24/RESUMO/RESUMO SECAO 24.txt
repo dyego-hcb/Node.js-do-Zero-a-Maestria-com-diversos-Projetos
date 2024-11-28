@@ -1,0 +1,95 @@
+-- Resumo Secao 24: Apendice H: Gerenciamento de Bancos com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 24: Apendice H: Gerenciamento de Bancos com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos ver como fuciona o gerenciamento de bancos de dados mongodb desde a parte de criacao de database, tabelas, importacao e exportacao de bancos.
+
+Para ver os bancos no mongodb basta usar o seguinte comando:
+
+show dbs
+
+Para criar um bd no mongo basta usar o comando:
+
+use <nomeCollection> -> Inicia o banco, deve-se iniciar o banco primeiro e inserir pelo menos uma collection para o banco ser criado
+db -> Mostra o banco que esta usando
+db.nomeCollection.insertOne({nome: valor})
+
+Para criar uma collection no mongo basta usar o comando:
+
+db.nomeCollection.insertOne({nome: valor}) -> Nao é necessario criar uma collection basta inserir dado em alguma
+
+Para encontrar dados no mongodb basta usar o comando:
+
+db.nomeCollection.find({nome: valor})
+
+Funcao prety retorna melhor formatada usada muito no find, sintaxe:
+
+db.nomeCollection.find({nome: valor}).pretty()
+
+Criar collection manualmente:
+
+db.createCollection("nome", {opcoes})
+
+Pode-se definir paramentros de configuracoes como numero maximo de registro, tamanho maximo da collection, etc
+
+Exibir todas as collections:
+
+show collections
+
+Chave _id: Todo registro inserido no bd tem essa chave _id, esses ids sao unicos e nao repetem, e criado na hora de inserir o objeto, consulta id e mais rapido
+
+Removendo collection:
+
+db.<nomeCollection>.drop()
+
+OBS: Remove todos os dados da collection
+
+Removendo db:
+
+db.dropDatabase()
+
+OBS: Remove todos os dados do db
+
+Importacao dos bancos em json:
+MongoDB geralmente vem em json
+
+mongoimport <Arquivo> -d <database> -c <collection>
+
+Ja cria o db, collections e importa os dados
+
+Exportando bd:
+
+mongoexport -c <collection> -d <database> -o <output>
+
+Definimos quais colecoes, bd e qual o arquivo de saida
+
+Exportando bd maiores:
+PAra bd maiores com mais de 1 collection de forma automatica, devemos usar o mongodump
+
+mongodump -d <database> -o <diretorio>
+
+o -o cria uma pasta para cada collection com arquivos de cada collection
+
+Exporta em bson
+
+Importando bd maiores:
+PAra importar bd maiores com mais de 1 collection de forma automatica, precisamos usar o mongorestore
+
+mongorestore <diretorio>
+
+Informa apenas o caminho do dir
+
+Verificando status mongodb:
+Podemos obter algumas informacoes como quantas consultas no bd, consumo de rede, etc, utilizando o mongostat
+
+mongostat
+
+Vai abrir uma aba no terminal trazendo as infos em tempo real
+
+FOrma para remover todos os bancos, podemos criar um loop com a seguinte sintaxe:
+
+Mongo().getDbNames().foreach(fucntion(db){
+    if(['admin', 'config', 'local'].indexOf(db) < 0 ){
+        Mongo().getDb(db).dropDatabase()
+    }
+})
