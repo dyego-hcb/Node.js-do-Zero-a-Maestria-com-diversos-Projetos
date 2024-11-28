@@ -1,0 +1,39 @@
+-- Resumo Secao 27: Apendice K: Atualização de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 27: Apendice K: Atualização de Dados com MongoDB - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos abordar o tema de atualizacao de dados em MongoDB
+
+Para atualizar um dado precisamos utilizar o metodo updateOne passando um filtro e usando o operador $set, veja na sintaxe abaixo
+
+db.<nomeCollection>.updateOne({campo: filtro}, {$set: {<dados>}})
+
+O operador $set é onde ficam os valores a serem atualizados
+
+Para atualizar variso dados precisamos utilizar o metodo updateMany passando um filtro e usando o operador $set, veja na sintaxe abaixo
+
+db.<nomeCollection>.updateMany({campo: filtro}, {$set: {<dados>}})
+
+Adicionando dados com update, para isso basta inserir um valor para a chave que nao existe, como na sintaxe abaixo:
+
+db.<nomeCollection>updateMany({campo: filtro}, {$set: {campo: valor}})
+db.<nomeCollection>updateOne({campo: filtro}, {$set: {campo: valor}})
+
+Alterando todos os dados, para isso precisamos usar o replaceOne, como na sintaxe abaixo
+
+db.<nomeCollection>replaceOne({campo: filtro}, {campo: valor})
+
+Esse comando troca todos os campos do documento pelo o que foi definido, ou seja, perde os outros campos
+
+Adicionando item a um array precisamos usar o operador $push, como na sintaxe abaixo
+
+db.<nomeCollection>updateOne({campo: filtro}, {$push: {campo: valor}})
+
+Atualizando todos os registros do banco, basta utilizar o updateMany, porem nao pasasr nada no filtro como abaixo
+
+db.<nomeCollection>updateMany({}, {$set: {campo: valor}})
+
+Dica para delete e update:
+
+Primeiro faz um select antes de atualizar para fins de verificacao se e esse mesmo elemento a ser atualizado.
+O mesmo para o delete
