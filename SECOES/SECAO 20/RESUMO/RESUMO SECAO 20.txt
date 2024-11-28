@@ -1,0 +1,25 @@
+-- Resumo Secao 20: Apendice D: Projeto com HTML e CSS (WathsappWeb Clone) - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 20: Apendice D: Projeto com HTML e CSS (WathsappWeb Clone) - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos criar um projeto que é um clone do WathsappWeb usando HTML e CSS, o codigo fonte esta disponivel no repositorio do github no link abaixo.
+Link: https://github.com/dyego-hcb/Whatsapp-Web-Clone
+
+Passo a Passo:
+
+1- PEGAR AS IMG QUE IRAO COMPOR O PROJETO
+2- INICIAR A ESTRUTURA DO CODIGO, CRIANDO AS PASTAS SRC, IMG, PAGES E STYLES
+3- CIAR O INDEX.HTML EM SRC/PAGES QUE É A PAGINA PRINCIPAL
+4- CRIAR O STYLES.CSS EM SRC/STYLES QUE E O STYLE DO NOSSO PROJETO
+5- IMPORTAR OS ICONES E FONTES UTILIZADAS DO FONT AEWSOME
+6- FAZER O SIDE BAR QUE É AQUELA BARRA LATERAL ONDE TEMOS AS CONVERSSA, ETC, UTILIZANDO O ASIDE
+7- CRIAR NA BARRA LATERAL A TOOL-BAR QUE EXIBE INFO DO USUARIO LOGADO
+8- CRIAR NA BARRA LATERAL UMA DIVISAO PARA NOTIFICACOES
+9- CRIAR NA BARRA LATERAL UMA DIVISAO PARA BUSCA DE CONVERSAOS
+10- CRIAR NA BARRA LATERAL AS LISTAS DE CONVERSAS
+11- CRIAR A SECAO PRINCIAPL, ONDE MOSTRA A CONVERSA E INFO DO CONTADO
+12- CRIAR A SECAO PRINCIPAL, ONDE MOSTA A INFO DO USER DA CONVERSA
+13- CRIAR A SECAO PRICIPAL, ONDE MOSTRA A CONVERSA
+14- CRIAR A SECAO PRINCIPAL, ONDE DIGITA AS MSG
+15- ESTILZIAR A SIDE BAR
+16- ESTILIZAR A SECAO PRINCIPAL

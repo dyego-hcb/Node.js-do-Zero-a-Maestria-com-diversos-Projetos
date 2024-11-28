@@ -1,0 +1,2 @@
+Nessa secao desenvolvemos uma aplicacao que e um clone do WathsappWeb usando apenas HTML e CSS, o projeto esta no repostorio do link abaixo.
+link repositorio: https://github.com/dyego-hcb/Whatsapp-Web-Clone
