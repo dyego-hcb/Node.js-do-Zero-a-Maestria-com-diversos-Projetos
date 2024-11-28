@@ -1,0 +1,81 @@
+-- Resumo Secao 22: Apendice F: Criação de Tabelas em MySQL - Curso Node.js do Zero a Maestria com diversos Projetos --
+
+Este e o Resumo Secao 22: Apendice F: Criação de Tabelas em MySQL - Curso Node.js do Zero a Maestria com diversos Projetos, onde contera um resumo detalhado sobre o que foi visto na secao, tambem teremos na pasta exercicios/exercicio_video_aula os exemplos feitos na video aula e na pasta exercicios/exercicio_proposto os exercicios que foram propostos na video aula como aplicao pratica do conteudo da video aula. 
+
+Nessa secao iremos aprender como criar tabelas em mysql e aprender seus tipos de dados e colunas.
+
+Tabela é uma entidade reponsavel por guardar nossos dados, umam tabela possui colunas, as colunas sao como cateogria dos nosso dados ou atributos.
+Esses atributos possui tipos de dados determinados como texto, numero, datas, etc.
+Que podem ser nao nulo, chave primaria, auto incremento, etc
+
+Para criar uma tabela usamos o comando
+
+CREATE TABLE <NomeTabela> 
+CREATE TABLE <NomeTabela> (<coluna> <tipo>)
+
+Para remover uma tabela usamos o comando
+
+DROP TABLE <NomeTabela>
+
+OBS: TODOS OS DADOS DA TABELA SAO PERDIDOS
+
+Principais tipos de dados:
+
+Tipos de Texto 
+Tipos de Numero 
+Tipos de Data 
+Tipos Espaciais
+
+Tipos de Dados de Texto:
+CHAR(X) -> Aceita textos com 0 a 255 caracteres
+VARCHAR(X) -> Aceita textos com 0 a 65535 caracteres
+TINYTEXT -> Apenas textos com ate 255 caracteres
+MEDIUMTEXT -> Apenas texto com ate 16777215 caracteres
+
+OBS1: X QUANTIDADE MAXIMA
+OBS2: CHAR E VARCHAR ACEITAM CARACTERES ESPACIAIS
+
+Para inserir dados no usamos o comando:
+
+INSERT INTO <NomeTabela> (<colunas>) VALUES (<valores>)
+
+OBS: VALORES PRECISAM CORRESPONDER A ORDEM DA COLUNAS E OS VALORES DE TEXTO SAO INSERIDOS ENTRE ASPAS
+
+Para selecionar todos os dados da tabela usamos o comando 
+
+SELECT * FROM <NomeTabela>
+
+Tipos de Dados Numericos:
+
+BIT(X) -> 1 a 64 Caracteres
+TINYINT(X) -> 1 a 255 Caracteres
+BOOL -> 0 é false outros valores true
+INT(X) -> valores entre -2147483648 a 2417483647
+
+OBS: TIPOS NUMERICOS NAO PRECISAM DE ASPAS PARA SERM INSERIDOS
+
+Tipos de Dados Date:
+
+DATE -> Aceita data no formato YYYY-MM-DD
+DATETIME -> Aceita data no formato YYYY-MM-DD:HH:MM:SS
+TIMESTAMP -> Aceita data no formato datetime, porem entre 1970 a 2038
+
+OBS: DATAS SAO INSERIDAS EM ASPAS
+
+É importante escolher o tipo de dado correto e limitar em um tamanho correto pois isso ira otimizar o banco deixando ele mais rapido, economiza espaco em disco e mais seguro.
+Podemos altear as tabela no bd da seguinte maneira
+1- Adicao de colunas
+2- Remocao de colunas
+3- Modificar tipo de colunas
+
+Para adicionar uma coluna nova, usamos a seguinte sintaxe:
+
+ALTER TABLE <NomeTabela> ADD COLUMN <nome> <tipo>
+
+Para remover uma coluna, usamos a seguinte sintaxe:
+
+ALTER TABLE <NomeTabela> DROP COLUMN <nome>
+
+Para alterar uma coluna, usamos a seguinte sintaxe:
+
+ALTER TABLE <NomeTabela> MODIFY COLUMN <nome> <tipo>
